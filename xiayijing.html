@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIA YIJING - Portfolio 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.0/build/spline-viewer.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '微软雅黑', 'Heiti SC', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden; 
+        }
+
+        spline-viewer {
+            width: 100%;
+            height: 100%;
+        }
+
+        #spline-watermark {
+            display: none !important;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 占位框与标签样式 */
+        .placeholder-box {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .placeholder-box:hover {
+            border-color: #666;
+            color: #aaa;
+        }
+        .img-tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+            background: rgba(0,0,0,0.5);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #aaa;
+        }
+
+        /* AI 聊天窗口样式 */
+        #aiChatWindow {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-origin: bottom right;
+        }
+        .ai-message-bubble {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 16px;
+            border-bottom-left-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            max-width: 85%;
+            align-self: flex-start;
+        }
+        .user-message-bubble {
+            background: rgba(147, 51, 234, 0.8); /* Purple-600 */
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 16px;
+            border-bottom-right-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            max-width: 85%;
+            align-self: flex-end;
+            box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+        }
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="w-full relative bg-white text-gray-900">
+
+    <!-- 1. 导航栏 (已恢复玻璃质感) -->
+    <div class="absolute top-8 left-1/2 -translate-x-1/2 z-[60] w-full max-w-[95%] md:max-w-fit">
+        <nav class="flex items-center justify-between md:justify-center px-6 py-3 md:px-10 md:py-4 
+                    bg-white/60 backdrop-blur-xl border border-black/5 
+                    rounded-full shadow-lg shadow-black/5 hover:bg-white/80 transition-all duration-300
+                    overflow-x-auto no-scrollbar"
+             style="font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;">
+            <div class="flex items-center gap-6 md:gap-8 text-xs md:text-sm text-gray-700 whitespace-nowrap tracking-wide">
+                <a href="#home" class="group hover:text-purple-600 transition-all">
+                    <span class="font-bold">首页</span><span class="opacity-30 mx-1">|</span><span class="text-[10px] font-medium opacity-50 group-hover:opacity-100 uppercase">Home</span>
+                </a>
+                <a href="#about" class="group hover:text-purple-600 transition-all">
+                    <span class="font-bold">关于我</span><span class="opacity-30 mx-1">|</span><span class="text-[10px] font-medium opacity-50 group-hover:opacity-100 uppercase">About me</span>
+                </a>
+                <a href="#portfolio" class="group hover:text-purple-600 transition-all">
+                    <span class="font-bold">作品集</span><span class="opacity-30 mx-1">|</span><span class="text-[10px] font-medium opacity-50 group-hover:opacity-100 uppercase">Portfolio</span>
+                </a>
+                <a href="#skills" class="group hover:text-purple-600 transition-all">
+                    <span class="font-bold">核心技能</span><span class="opacity-30 mx-1">|</span><span class="text-[10px] font-medium opacity-50 group-hover:opacity-100 uppercase">Skills</span>
+                </a>
+                <a href="#experience" class="group hover:text-purple-600 transition-all">
+                    <span class="font-bold">职业经历</span><span class="opacity-30 mx-1">|</span><span class="text-[10px] font-medium opacity-50 group-hover:opacity-100 uppercase">Experience</span>
+                </a>
+                <a href="#contact" class="group hover:text-purple-600 transition-all">
+                    <span class="font-bold">联系方式</span><span class="opacity-30 mx-1">|</span><span class="text-[10px] font-medium opacity-50 group-hover:opacity-100 uppercase">Contact</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 2. 第一屏：白底极简主页 -->
+    <section id="home" class="relative w-full h-screen overflow-hidden bg-white">
+        <!-- 3D 场景 -->
+        <div class="absolute inset-0 z-10">
+            <spline-viewer url="https://prod.spline.design/H6Meq4gTrZiEzdr5/scene.splinecode"></spline-viewer>
+        </div>
+
+        <!-- Logo 居中定位 -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -mt-[35vh] md:-mt-[30vh] z-50 flex flex-col items-center gap-2 pointer-events-none select-none">
+            <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/logo.png" alt="Portfolio 2026" class="w-64 md:w-[580px] object-contain opacity-100 -translate-x-[-10px]">
+            <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/subtitle.png" alt="Artwork by Xia Yijing" class="w-32 md:w-56 object-contain opacity-60 tracking-widest -translate-x-[-120px]">
+        </div>
+
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+            <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/shadow.png" class="mt-[130px] md:mt-[170px] w-64 md:w-[420px] opacity-70 blur-md mix-blend-multiply">
+        </div>
+    </section>
+
+    <!-- 3. 第二屏：黑底作品集 -->
+    <section id="portfolio" class="w-full bg-black text-white relative z-40 pt-32 pb-48">
+        
+        <!-- 标题 -->
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 mb-24">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-[0.2em] mb-4">PROJECT EXPERIENCE</h2>
+            <p class="text-gray-400 tracking-widest text-sm uppercase">2026 人工智能与视觉概念</p>
+            <div class="w-24 h-[1px] bg-white/30 mt-8"></div>
+        </div>
+
+        <!-- ================= Project 01 ================= -->
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 mb-40 relative">
+            <!-- 巨型数字 01 -->
+            <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">01</div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10">
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <div class="placeholder-box aspect-square w-full md:w-2/3 lg:w-full rounded-md">[ 左上角徽标图 ]</div>
+                    <div class="placeholder-box aspect-video w-full rounded-md">[ PLAN A 辅助图 ]</div>
+                    <div class="placeholder-box aspect-video w-full rounded-md">[ PLAN B 辅助图 ]</div>
+                    <div class="placeholder-box aspect-video w-full rounded-md">[ PLAN C 辅助图 ]</div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="placeholder-box w-full h-[600px] lg:h-full min-h-[800px] rounded-md">
+                        [ 巨大主视觉图 (高塔建筑) ]<br><br>
+                        (替换时使用 &lt;img src="..." class="w-full h-full object-cover rounded-md"&gt;)
+                    </div>
+                </div>
+                <div class="lg:col-span-3 flex flex-col justify-start pt-4 lg:pt-0">
+                    <h3 class="text-xl md:text-2xl font-bold mb-6 leading-snug">
+                        Project Name: Concept Design<br>
+                        for the Music Video "If the xxx Arrive"
+                    </h3>
+                    <p class="text-sm text-gray-300 font-bold mb-8">项目名称：《if the xxx arrive》MV场景概念设计</p>
+                    <div class="space-y-6 text-xs text-gray-400 leading-relaxed tracking-wider">
+                        <div>
+                            <p class="text-white font-bold mb-2">设计逻辑：</p>
+                            <p>“基于mv概念，导演视觉意图，mv整体色调进行mv主及建筑概念设计，针对核心地标建筑进行多方案（Multi-scheme）推演，利用顶视图确立功能区域划分，确保设计的空间逻辑可落地于3D流程阶段。”</p>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold mb-2">光影表现：</p>
+                            <p>“采用了大气透视（Atmospheric Perspective）与冷暖对比色调（Teal & Orange / Red Accents）。利用高空雾气增加画面的空间深度，通过建筑边缘的LED发光带引导视觉动线。”</p>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold mb-2">AIGC 工作流：</p>
+                            <p>“通过blender搭建简模，利用Midjourney生成高质量的建筑肌理与光影基调，通过Photoshop进行后期资产拼贴与文字标注修复，解决了AI无法生成准确文本的局限性。”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= Project 02 ================= -->
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 mb-40 relative">
+            <!-- 巨型数字 02 -->
+            <div class="absolute -top-20 md:-top-32 right-0 md:-right-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">02</div>
+            
+            <div class="relative z-10">
+                <div class="mb-10">
+                <h3 class="text-xl md:text-2xl font-bold tracking-wide">《Cyber-Ethereal: K-Pop Stage Visual & Android Concept Design》</h3>
+                <p class="text-gray-400 text-sm mt-2">(网络空灵：K-Pop 舞台视觉与仿生人概念设计)</p>
+                <p class="text-gray-500 text-xs mt-4 tracking-widest">利用 AIGC 探索视觉上限，通过人工干预回归机械逻辑。</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 mb-8">
+                <div>
+                    <div class="placeholder-box aspect-video w-full rounded-md mb-4">[ Initial AI Generation 原图 ]</div>
+                    <p class="text-center text-xs text-gray-400">Initial AI Generation (Aesthetic Prototype - Structural Hallucination)</p>
+                </div>
+                <div>
+                    <div class="placeholder-box aspect-video w-full rounded-md mb-4">[ Structural Refinement 修复图 ]</div>
+                    <p class="text-center text-xs text-gray-400">Structural Refinement (Engineering Logic - Production Ready)</p>
+                </div>
+            </div>
+            <div class="text-xs text-gray-400 space-y-2 tracking-wider">
+                <p><span class="text-gray-200">人脸美学：</span> “基于 K-Pop Idealized Face 的审美标准，强化清冷感与工业感的对比。”</p>
+                <p><span class="text-gray-200">物理属性：</span></p>
+                <p>金属： “High-Polished Chrome（高抛光铬合金）”</p>
+                <p>皮肤： “Translucent Silica Gel Texture（半透明硅胶质感）”</p>
+                <p>高光： “Sharp Fresnel Falloff（锐利的菲涅尔衰减）”</p>
+            </div>
+        </div>
+
+        <!-- 项目 02 第二部分 -->
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-4">
+                        <p class="text-center text-xs text-gray-400 mb-2">Midjourney 原图</p>
+                        <div class="placeholder-box w-full aspect-[1/2] rounded-md">[ 全身原图 1 ]</div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <p class="text-center text-xs text-gray-400 mb-2">AI 修复过程图</p>
+                        <div class="placeholder-box w-full aspect-[1/2] rounded-md">[ 全身原图 2 ]</div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 flex flex-col justify-center">
+                    <p class="text-right text-xs text-gray-400 mb-6 font-bold tracking-widest uppercase">PS + BANANA + COMFYUI</p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+                        <div class="placeholder-box aspect-[3/4] rounded-md">[ 细节图 1: 腿部透视 ]</div>
+                        <div class="placeholder-box aspect-[3/4] rounded-md">[ 细节图 2: 骨骼修正 ]</div>
+                        <div class="placeholder-box aspect-[3/4] rounded-md">[ 细节图 3: 机械腿放大 ]</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="placeholder-box aspect-video rounded-md">[ 细节图 4: 胸部修正 ]</div>
+                        <div class="placeholder-box aspect-video rounded-md">[ 细节图 5: 背部机械结构 ]</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= Project 03 ================= -->
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative">
+            <!-- 巨型数字 03 -->
+            <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">03</div>
+
+            <div class="relative z-10">
+                <div class="mb-12">
+                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">Stage Visual Effects Solution 2<br>舞台视效方案 2</h3>
+                    <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
+                        <span>Humanoid</span> <span>/</span> <span>Inorganic Texture</span> <span>/</span> <span>Futuristic Digital Life</span>
+                    </div>
+                </div>
+
+                <!-- 1. 核心视觉 (001.jpg) -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-20">
+                    <div class="md:col-span-4 space-y-6">
+                        <div class="border-l-2 border-purple-500 pl-6 py-2">
+                            <h4 class="text-lg font-bold text-white mb-2">Concept Definition</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                探索未来数字生命体的形态。将“人形”与“无机质感”结合，破碎的金属外壳下透出内部的能量光辉。
+                            </p>
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            <p class="mb-1">TOOL: Midjourney v6 + Photoshop</p>
+                            <p>YEAR: 2026</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-8">
+                        <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/001.jpg" alt="主视觉人像" class="w-full aspect-[16/9] md:aspect-[4/3] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-colors">
+                    </div>
+                </div>
+
+                <!-- 2. 美学逻辑解析 (002.jpg - 拆解版) -->
+                <div class="mb-20">
+                    <h4 class="text-sm font-bold text-gray-500 mb-8 uppercase tracking-widest border-b border-white/10 pb-4">Aesthetic Methodology & Analysis</h4>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                        <!-- 左侧：纯净图片 (去字版) -->
+                        <div class="relative group">
+                            <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/002.jpg" alt="美学逻辑图" class="w-full rounded-lg border border-white/10 group-hover:border-purple-500/30 transition-all duration-500">
+                            <div class="absolute bottom-4 left-4 text-[10px] text-gray-500 bg-black/80 px-2 py-1 rounded">Material Analysis</div>
+                        </div>
+
+                        <!-- 右侧：设计说明 (提取自原图) -->
+                        <div class="space-y-8 pt-4">
+                            <!-- Block 1 -->
+                            <div>
+                                <h5 class="text-white font-bold text-lg mb-1 flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                                    美学逻辑 <span class="text-xs text-gray-500 font-normal uppercase ml-2">Aesthetic Methodology</span>
+                                </h5>
+                                <p class="text-sm text-gray-400 mb-2">Ethereal Aesthetic Calibration (空灵美学标定)</p>
+                                <p class="text-xs text-gray-500 leading-relaxed border-l border-white/10 pl-4">
+                                    尝试了韩系审美光泽感皮肤后的另一种哑光质感肤质。为了压制 AI 常规的“写实油腻感”，转向一种更偏向当代艺术或实验性摄影的调性，尝试加入更多纹理与粗糙质感。
+                                </p>
+                            </div>
+
+                            <!-- Block 2 -->
+                            <div>
+                                <h5 class="text-white font-bold text-lg mb-1 flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                                    材质表现力 <span class="text-xs text-gray-500 font-normal uppercase ml-2">Materiality & Shading</span>
+                                </h5>
+                                <p class="text-sm text-gray-400 mb-2">Contrast of Textures (材质对比度)</p>
+                                <ul class="text-xs text-gray-500 leading-relaxed space-y-2 border-l border-white/10 pl-4">
+                                    <li><strong class="text-gray-400">Micro-geometry Details:</strong> 标注面部碎裂处或植物纹理的细小褶皱。</li>
+                                    <li><strong class="text-gray-400">SSS (次表面散射):</strong> 体现“不真实中的真实感”，强调柔软皮肤与坚硬矿石的质感反差。</li>
+                                </ul>
+                            </div>
+
+                            <!-- Block 3 -->
+                            <div>
+                                <h5 class="text-white font-bold text-lg mb-1 flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                                    边缘光 <span class="text-xs text-gray-500 font-normal uppercase ml-2">Rim Lighting</span>
+                                </h5>
+                                <p class="text-xs text-gray-500 leading-relaxed border-l border-white/10 pl-4">
+                                    指向人物轮廓线。边缘光有利于增强角色的虚幻感，并将主体与极简背景有效分离。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 变体推演 (003.jpg) -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-500 mb-4 uppercase tracking-widest">Variations: Color Psychology Settings</h4>
+                    <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/003.jpg" alt="变体推演" class="w-full rounded-lg border border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                    <p class="text-center text-[10px] text-gray-600 mt-2 tracking-widest">
+                        Under the same theme, different hues or materials were used to test the aesthetic stability.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 4. 返回顶部按钮 -->
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            class="fixed bottom-8 right-8 z-50 p-4 bg-white/80 backdrop-blur-md border border-purple-200 
+                   text-purple-600 rounded-full shadow-xl opacity-0 pointer-events-none 
+                   hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- ✨ 5. AI 策展人助手 -->
+    <button id="aiToggleBtn" onclick="toggleAIChat()"
+            class="fixed bottom-24 right-8 z-50 p-4 bg-black text-white rounded-full shadow-2xl 
+                   border border-gray-800 hover:scale-110 transition-all duration-300 group">
+        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:rotate-12 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+    </button>
+
+    <!-- 聊天窗口 -->
+    <div id="aiChatWindow" class="fixed bottom-40 right-8 z-50 w-80 md:w-96 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transform scale-0 opacity-0 overflow-hidden flex flex-col pointer-events-none">
+        <div class="p-4 border-b border-white/10 bg-white/5 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                <h3 class="text-white font-bold text-sm tracking-widest">AI CURATOR</h3>
+            </div>
+            <button onclick="toggleAIChat()" class="text-gray-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        <div id="chatMessages" class="h-80 overflow-y-auto p-4 flex flex-col no-scrollbar">
+            <div class="ai-message-bubble">
+                你好！我是 XIA YIJING 作品集的 AI 导览员 ✨<br>你可以问我关于作品风格、创作工具 (Midjourney/Blender) 或设计理念的问题。
+            </div>
+        </div>
+        <div class="p-4 border-t border-white/10 bg-white/5 relative">
+            <input type="text" id="userQuery" placeholder="输入问题... (例如：这里用了什么软件？)" 
+                   class="w-full bg-white/10 text-white text-sm rounded-full px-4 py-3 pr-12 outline-none focus:bg-white/20 transition-all placeholder-gray-500"
+                   onkeypress="if(event.key === 'Enter') handleAskAI()">
+            <button onclick="handleAskAI()" class="absolute right-6 top-1/2 -translate-y-1/2 text-purple-400 hover:text-purple-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.ondragstart = function() { return false; };
+
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        const chatWindow = document.getElementById('aiChatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userQuery');
+        let isChatOpen = false;
+
+        function toggleAIChat() {
+            isChatOpen = !isChatOpen;
+            if (isChatOpen) {
+                chatWindow.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+                chatWindow.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
+            } else {
+                chatWindow.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+                chatWindow.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
+            }
+        }
+
+        async function handleAskAI() {
+            const query = userInput.value.trim();
+            if (!query) return;
+
+            addMessage(query, 'user');
+            userInput.value = '';
+
+            const loadingId = addLoadingIndicator();
+
+            const systemContext = `
+                你是一位专业、前卫的 AI 策展人，服务于 XIA YIJING (夏以京) 的个人作品集网站。
+                网站主题：Portfolio 2026 - 人工智能与视觉概念。
+                设计师背景：擅长 AIGC 工作流，结合 Midjourney, Blender, Photoshop 和 ComfyUI 进行创作。
+                作品风格：赛博朋克、未来主义、K-Pop 视觉美学、机械仿生。
+                核心技能：Concept Design, AIGC Workflow, Visual Storytelling。
+                请用简洁、专业但略带未来感的语气回答访客的问题。
+                如果被问到联系方式，请引导至底部的 Contact 板块。
+            `;
+
+            const fullPrompt = systemContext + "\n\n访客问题: " + query;
+
+            try {
+                const apiKey = ""; 
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: fullPrompt }] }] })
+                });
+
+                const data = await response.json();
+                removeMessage(loadingId);
+
+                if (data.candidates && data.candidates[0].content) {
+                    const reply = data.candidates[0].content.parts[0].text;
+                    addMessage(reply, 'ai');
+                } else {
+                    addMessage("我的连接似乎受到了时空干扰... 请稍后再试。", 'ai');
+                }
+
+            } catch (error) {
+                removeMessage(loadingId);
+                addMessage("系统离线。请检查网络连接。", 'ai');
+                console.error('Gemini API Error:', error);
+            }
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = sender === 'user' ? 'user-message-bubble' : 'ai-message-bubble';
+            div.innerHTML = text.replace(/\n/g, '<br>');
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div.id = 'msg-' + Date.now();
+        }
+
+        function addLoadingIndicator() {
+            const div = document.createElement('div');
+            div.className = 'ai-message-bubble';
+            div.innerHTML = '<div class="flex gap-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>';
+            div.id = 'loading-' + Date.now();
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return div.id;
+        }
+
+        function removeMessage(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+    </script>
+</body>
+</html>
