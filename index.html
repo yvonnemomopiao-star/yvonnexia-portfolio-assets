@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 强制页面使用浅色模式，防止手机浏览器跟随系统强制反转白底变黑底 -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
     <title>XIA YIJING - Portfolio 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.0/build/spline-viewer.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.61/build/spline-viewer.js"></script>
     
     <style>
         html, body {
@@ -124,26 +127,16 @@
             </div>
         </div>
 
-        <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/logo.png" 
-             alt="Portfolio 2026" 
+        <!-- 使用合并后的标题图片，简单且稳定地居中显示（稍微增加了向上的偏移量） -->
+        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/title.png?raw=true" 
+             alt="XIA YIJING Portfolio 2026 - Artwork" 
              class="absolute top-1/2 left-1/2 z-50 
-                    w-[345px] md:w-[700px] object-contain opacity-100 
+                    w-[350px] md:w-[750px] object-contain opacity-100 
                     -translate-x-1/2 -translate-y-1/2 
-                    -mt-[35vh] md:-mt-[32vh] 
-                    ml-[10px] 
+                    -mt-[32vh] md:-mt-[30vh] lg:-mt-[32vh]
                     pointer-events-none select-none">
 
-        <!-- 修复手机端副标题超出界面的问题：移除固定的大 ml 值，改用响应式间距，并限制最大宽度 -->
-        <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/subtitle.png" 
-             alt="Artwork by Xia Yijing" 
-             class="absolute top-1/2 left-1/2 z-50 
-                    w-[153px] md:w-56 object-contain opacity-60 tracking-widest 
-                    -translate-x-1/2 -translate-y-1/2 
-                    -mt-[28vh] md:-mt-[23vh] 
-                    ml-[10vw] md:ml-[170px] 
-                    max-w-[80vw] md:max-w-none
-                    pointer-events-none select-none">
-
+        <!-- 背景投影 -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
             <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/shadow.png" class="mt-[150px] md:mt-[250px] w-64 md:w-[320px] opacity-80 blur-md mix-blend-multiply">
         </div>
@@ -631,16 +624,16 @@
                     </div>
                 </div>
 
-                <!-- 混合排版 (左侧两张竖图，右侧一张大横图) 平板端和PC端统一并排 -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 mb-10">
-                    <!-- 左侧：占据 6 份 (50%宽度)，内部均分2份 -->
-                    <div class="md:col-span-6 grid grid-cols-2 gap-4 lg:gap-6">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/05.png?raw=true" alt="无UI战斗场景1" class="w-full h-[300px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/06.png?raw=true" alt="无UI战斗场景2" class="w-full h-[300px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                <!-- 混合排版 (左侧两张竖图，右侧一张大横图) 强制手机端并排 -->
+                <div class="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-10">
+                    <!-- 左侧：占据 6 份 (50%宽度) -->
+                    <div class="col-span-6 grid grid-cols-2 gap-2 md:gap-4 lg:gap-6">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/05.png?raw=true" alt="无UI战斗场景1" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/06.png?raw=true" alt="无UI战斗场景2" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                     </div>
                     <!-- 右侧：占据 6 份 (50%宽度) -->
-                    <div class="md:col-span-6 flex flex-col justify-center">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/game.png?raw=true" alt="游戏网络截图" class="w-full h-[300px] md:h-[300px] lg:h-[480px] object-contain rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                    <div class="col-span-6 flex flex-col justify-center">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/game.png?raw=true" alt="游戏网络截图" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-contain rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                     </div>
                 </div>
 
@@ -668,20 +661,20 @@
                     </div>
                 </div>
 
-                <!-- 2列对比排版 (原图 vs 成片截图) 平板端和PC端统一并排 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 mb-10">
+                <!-- 2列对比排版 (原图 vs 成片截图) 强制手机端并排 -->
+                <div class="grid grid-cols-2 gap-4 md:gap-6 lg:gap-12 mb-10">
                     <!-- 左列：原图 -->
-                    <div class="flex flex-col gap-4 md:gap-6">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/01.png?raw=true" alt="项目原图 1" class="w-full h-[200px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/03.png?raw=true" alt="项目原图 2" class="w-full h-[200px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <p class="text-center text-[10px] md:text-xs text-gray-400 font-bold tracking-widest mt-2 border-t border-white/10 pt-4">左图：项目原图 (Original Drawings)</p>
+                    <div class="flex flex-col gap-2 md:gap-6">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/01.png?raw=true" alt="项目原图 1" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/03.png?raw=true" alt="项目原图 2" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest mt-2 border-t border-white/10 pt-2 md:pt-4">左图：项目原图 (Original Drawings)</p>
                     </div>
 
                     <!-- 右列：B站截图 -->
-                    <div class="flex flex-col gap-4 md:gap-6">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/02.png?raw=true" alt="B站截图 1" class="w-full h-[200px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/04.png?raw=true" alt="B站截图 2" class="w-full h-[200px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <p class="text-center text-[10px] md:text-xs text-gray-400 font-bold tracking-widest mt-2 border-t border-white/10 pt-4">右图：B站截图《化物语》第一章 & 《伪物语》第二章</p>
+                    <div class="flex flex-col gap-2 md:gap-6">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/02.png?raw=true" alt="B站截图 1" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/04.png?raw=true" alt="B站截图 2" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest mt-2 border-t border-white/10 pt-2 md:pt-4">右图：B站截图《化物语》第一章 & 《伪物语》第二章</p>
                     </div>
                 </div>
 
@@ -1065,6 +1058,15 @@
             video.addEventListener('loadstart', () => { loader.style.opacity = '1'; });
             video.addEventListener('playing', () => { loader.style.opacity = '0'; });
             video.addEventListener('canplay', () => { loader.style.opacity = '0'; });
+
+            const baseUrl = 'https://res.cloudinary.com/duzkdvaki/video/upload/';
+            const videoPath = 'v1770885127/Paparazzi_2_gh9t3b.mp4';
+
+            // 检测是否为手机端 (宽度 <= 768px)，如果是则默认设置为 720p 画质
+            if (window.innerWidth <= 768 && qualitySelect) {
+                qualitySelect.value = '720p';
+                video.setAttribute('data-src', baseUrl + 'h_720,q_auto,f_auto/' + videoPath);
+            }
 
             if (qualitySelect) {
                 qualitySelect.addEventListener('change', (e) => {
