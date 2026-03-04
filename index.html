@@ -8,6 +8,30 @@
     <meta name="supported-color-schemes" content="light">
     <title>XIA YIJING - Portfolio 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // 核心修改：通过配置强行覆盖默认的紫调，改为您指定的偏蓝紫 (103, 51, 234)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: {
+                            50: '#f0f0fd',
+                            100: '#e4e2fb',
+                            200: '#cfc9f7',
+                            300: '#b1a4f1',
+                            400: '#8f77e9',
+                            500: '#724ee0',
+                            600: '#6733ea', // 就是您想要的 rgb(103, 51, 234)
+                            700: '#5824cd',
+                            800: '#481fa7',
+                            900: '#3d1a88',
+                            950: '#250e5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.61/build/spline-viewer.js"></script>
     
     <style>
@@ -45,15 +69,15 @@
             border-radius: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(147, 51, 234, 0.5); /* 紫色半透明 */
+            background: rgba(103, 51, 234, 0.5); /* 统一修改为新颜色的 RGB */
             border-radius: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(147, 51, 234, 0.9);
+            background: rgba(103, 51, 234, 0.9);
         }
         .custom-scrollbar {
             scrollbar-width: thin;
-            scrollbar-color: rgba(147, 51, 234, 0.5) rgba(255, 255, 255, 0.1);
+            scrollbar-color: rgba(103, 51, 234, 0.5) rgba(255, 255, 255, 0.1);
         }
 
         /* 占位框与标签样式 */
@@ -131,7 +155,7 @@
         <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/title.png?raw=true" 
              alt="XIA YIJING Portfolio 2026 - Artwork" 
              class="absolute top-1/2 left-1/2 z-50 
-                    w-[360px] md:w-[750px] object-contain opacity-100 
+                    w-[360px] md:w-[700px] object-contain opacity-100 
                     -translate-x-1/2 -translate-y-1/2 
                     -mt-[32vh] md:-mt-[30vh] lg:-mt-[32vh]
                     pointer-events-none select-none">
@@ -177,9 +201,9 @@
                         <img id="project01CompareImage" src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/buildingbase.jpg?raw=true" alt="修改前的主视觉" class="absolute inset-0 w-full h-full object-cover pointer-events-none bg-[#111]" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
 
                         <!-- 3. 滑动分割线与把手 -->
-                        <div id="project01CompareHandle" class="absolute top-0 bottom-0 w-[2px] bg-purple-500 left-[50%] pointer-events-none z-10 flex items-center justify-center -translate-x-1/2 shadow-[0_0_15px_rgba(147,51,234,0.6)] transition-opacity duration-300">
+                        <div id="project01CompareHandle" class="absolute top-0 bottom-0 w-[2px] bg-purple-500 left-[50%] pointer-events-none z-10 flex items-center justify-center -translate-x-1/2 shadow-[0_0_15px_rgba(103,51,234,0.6)] transition-opacity duration-300">
                             <!-- 中间的小圆圈把手 -->
-                            <div class="w-10 h-10 bg-black/80 backdrop-blur-md border-2 border-purple-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(147,51,234,0.5)]">
+                            <div class="w-10 h-10 bg-black/80 backdrop-blur-md border-2 border-purple-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(103,51,234,0.5)]">
                                 <div class="flex gap-[3px]">
                                     <div class="w-[2px] h-4 bg-white/80 rounded-full"></div>
                                     <div class="w-[2px] h-4 bg-white/80 rounded-full"></div>
@@ -581,6 +605,70 @@
 
             <div class="relative z-10">
                 <div class="mb-12">
+                    <h3 class="text-xl md:text-2xl font-bold tracking-wide leading-snug">
+                        Project Name: [The Stoic Series] — Emotional Resilience in AIGC Storytelling<br>
+                        项目名称：冷静系列：AIGC 叙事中的情感韧性
+                    </h3>
+                    <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
+                        <span>Vertical Ad</span> <span>/</span> <span>AIGC Storytelling</span> <span>/</span> <span>Emotional Resilience</span>
+                    </div>
+                </div>
+
+                <!-- 双竖屏视频并排展示 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 mb-10">
+                    <!-- Case A (LOVE) -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-full max-w-[320px] lg:max-w-[360px] aspect-[9/16] rounded-xl border border-white/10 overflow-hidden shadow-2xl relative group hover:border-purple-500/50 transition-all">
+                            <!-- 视频占位/替换点 -->
+                            <video class="w-full h-full object-cover bg-[#111]" controls loop muted playsinline preload="metadata">
+                                <!-- 请在此替换 Case A 视频地址 -->
+                                <source src="https://res.cloudinary.com/duzkdvaki/video/upload/v1772472418/LOVE_fidcxl.mp4" type="video/mp4">
+                            </video>
+                            <!-- 未加载视频时的文字提示，加了真实视频链接后可将其删除 -->
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none text-gray-600 text-xs tracking-widest border border-dashed border-gray-700 m-2 rounded-lg">
+                                
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center border-t border-white/10 pt-4 w-full max-w-[320px] lg:max-w-[360px]">
+                            <h4 class="text-white font-bold text-base md:text-lg mb-2">Case A (LOVE)</h4>
+                            <p class="text-xs text-gray-400 tracking-widest leading-relaxed">
+                                Focus on Human Vulnerability<br>
+                                (侧重于人性的真实与诚实)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Case B (Meteorites) -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-full max-w-[320px] lg:max-w-[360px] aspect-[9/16] rounded-xl border border-white/10 overflow-hidden shadow-2xl relative group hover:border-purple-500/50 transition-all">
+                            <!-- 视频占位/替换点 -->
+                            <video class="w-full h-full object-cover bg-[#111]" controls loop muted playsinline preload="metadata">
+                                <!-- 请在此替换 Case B 视频地址 -->
+                                <source src="https://res.cloudinary.com/duzkdvaki/video/upload/v1772472515/Meteorites_lktu5d.mp4" type="video/mp4">
+                            </video>
+                            <!-- 未加载视频时的文字提示，加了真实视频链接后可将其删除 -->
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none text-gray-600 text-xs tracking-widest border border-dashed border-gray-700 m-2 rounded-lg">
+                                
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center border-t border-white/10 pt-4 w-full max-w-[320px] lg:max-w-[360px]">
+                            <h4 class="text-white font-bold text-base md:text-lg mb-2">Case B (Meteorites)</h4>
+                            <p class="text-xs text-gray-400 tracking-widest leading-relaxed">
+                                Focus on Absolute Serenity<br>
+                                (侧重于极端的从容与稳定)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= Project 07 ================= -->
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
+            <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">07</div>
+
+            <div class="relative z-10">
+                <div class="mb-12">
                     <h3 class="text-xl md:text-2xl font-bold tracking-wide">Project Name: Starry Night Devil Ray<br>项目名称：星空魔鬼鱼</h3>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Bio-Luminescent Subsurface Scattering</span> <span>/</span> <span>Ethereal Cosmic-Aquatic</span> <span>/</span> <span>Nebulaic Epidermal Texture</span>
@@ -607,9 +695,9 @@
             </div>
         </div>
 
-        <!-- ================= Project 07 ================= -->
+        <!-- ================= Project 08 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
-            <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">07</div>
+            <div class="absolute -top-20 md:-top-32 right-0 md:-right-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">08</div>
 
             <div class="relative z-10">
                 <div class="mb-12">
@@ -646,9 +734,9 @@
             </div>
         </div>
 
-        <!-- ================= Project 08 ================= -->
+        <!-- ================= Project 09 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
-            <div class="absolute -top-20 md:-top-32 right-0 md:-right-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">08</div>
+            <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">09</div>
 
             <div class="relative z-10">
                 <div class="mb-12">
@@ -849,18 +937,82 @@
                 <p class="text-gray-400 mt-4 tracking-widest text-sm uppercase">前沿软件与工业化工作流 / 2D, 3D & AIGC</p>
             </div>
             
-            <div class="flex flex-col justify-center items-center w-full mt-10">
-                <!-- 预留给包含软件图标的整体 PNG/JPG 图片 -->
-                <!-- 请将您的图片上传至 Github 根目录并命名为 logos.jpg -->
-                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/logos.png?raw=true" 
-                     alt="Core Skills Software Logos" 
-                     class="w-full md:w-5/6 lg:w-4/5 object-contain hover:scale-105 transition-transform duration-500 cursor-zoom-in rounded-lg shadow-[0_0_30px_rgba(147,51,234,0.1)]"
-                     onclick="openLightbox(this.src)">
-                     
-                <div class="mt-12 text-center text-gray-400 text-xs md:text-sm leading-relaxed max-w-2xl mx-auto border-t border-white/10 pt-6">
-                    <p>熟练掌握从传统 2D 绘制到次世代 3D 辅助，再到最前沿 AIGC 视频/图像生成的全链路工具。<br>
-                    <span class="text-purple-400 font-bold mt-2 inline-block">SOFTWARE:</span> Photoshop / Illustrator / Blender / Capcut 剪映 / Sai / Figma / Procreate / Midjourney / Nano Banana/ ComfyUI / Kling / Dreamina / Sora / Veo 3 </p>
+            <!-- 技能重构：三列卡片布局 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                
+                <!-- 卡片 1：AIGC & 模型工作流 -->
+                <div class="bg-[#111] p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(103,51,234,0.15)] transition-all duration-300 group">
+                    <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide">AIGC & 模型工作流</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+                        精通多模态 AI 生成与节点流控制，实现从创意推演到工业级视觉/视频的高效产出。
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Midjourney</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">ComfyUI</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Stable Diffusion</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Nano Banana</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Kling</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Sora</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Veo 3</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Dreamina</span>
+                    </div>
                 </div>
+
+                <!-- 卡片 2：3D 辅助与结构控制 -->
+                <div class="bg-[#111] p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(103,51,234,0.15)] transition-all duration-300 group">
+                    <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide">3D 辅助与结构控制</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+                        利用 3D 工具构建底层空间与透视逻辑，精准修复 AI 生成中的结构错乱与物理失真。
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">3D Modeling</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Spatial Control</span>
+                    </div>
+                </div>
+
+                <!-- 卡片 3：传统视觉与动态后期 -->
+                <div class="bg-[#111] p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(103,51,234,0.15)] transition-all duration-300 group">
+                    <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                                <path d="M2 2l7.586 7.586"/>
+                                <circle cx="11" cy="11" r="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-white tracking-wide">传统视觉与后期</h3>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+                        具备深厚的跨界美学底蕴，负责最终画面的商业级交付、视觉统一与动态效果合成。
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Photoshop</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Blender</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">After Effects</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Illustrator</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">CapCut 剪映</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Procreate</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Figma</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
