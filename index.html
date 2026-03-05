@@ -6,6 +6,10 @@
     <!-- 强制页面使用浅色模式，防止手机浏览器跟随系统强制反转白底变黑底 -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
+    <!-- 新增：专门针对微信、QQ、部分国产安卓内置浏览器的“防强制深色模式”标记 -->
+    <meta name="nightmode" content="disable">
+    <meta name="force-dark-mode" content="false">
+    <meta name="theme-color" content="#ffffff">
     <title>XIA YIJING - Portfolio 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -363,6 +367,18 @@
 
                     </div>
                 </div>
+
+                <!-- 🌟 Project 02 新增：核心商业价值补充 (调整为极简格式，已移至7张组合图片下方) -->
+                <div class="mt-12 lg:mt-16 pt-4">
+                    <h5 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                        工业化落地 <span class="text-xs text-gray-500 font-normal uppercase ml-2">Pipeline Implementation</span>
+                    </h5>
+                    <p class="text-xs text-gray-500 leading-relaxed border-l border-white/10 pl-4 lg:max-w-[80%]">
+                        AIGC 生成的机械与仿生结构极易出现“透视畸变”与“关节逻辑错乱”，导致其通常只能停留在概念草图阶段。本项目展示了如何通过<strong class="text-gray-400">“底层拓扑重构 + 局部节点重绘”</strong>的混合管线，精准修复硬伤，将 AI 废片转化为完全符合下游 3D 建模严格规范的商业级资产。
+                    </p>
+                </div>
+
             </div>
         </div>
 
@@ -434,7 +450,7 @@
                                     边缘光 <span class="text-xs text-gray-500 font-normal uppercase ml-2">Rim Lighting</span>
                                 </h5>
                                 <p class="text-xs text-gray-500 leading-relaxed border-l border-white/10 pl-4">
-                                    指向人物轮廓线。边缘光有利于增强角色的虚幻感，并将主体与极简背景有效分离。
+                                    勾勒人物轮廓线。边缘光有利于增强角色的虚幻感，并将主体与极简背景有效分离。
                                 </p>
                             </div>
                         </div>
@@ -446,6 +462,17 @@
                     <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project03/04.jpg?raw=true" alt="变体推演" class="w-full rounded-lg border border-white/10 opacity-90 hover:opacity-100 transition-opacity">
                     <p class="text-center text-[10px] text-gray-600 mt-3 tracking-widest font-bold">
                         Under the same theme, different hues or materials were used to test the aesthetic stability.
+                    </p>
+                </div>
+
+                <!-- 🌟 Project 03 新增：核心商业价值补充 (调整为极简格式) -->
+                <div class="mt-10 lg:mt-12">
+                    <h5 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                        视觉锚点测试 <span class="text-xs text-gray-500 font-normal uppercase ml-2">Visual Anchoring</span>
+                    </h5>
+                    <p class="text-xs text-gray-500 leading-relaxed border-l border-white/10 pl-4 lg:max-w-[80%]">
+                        在确立 K-Pop 虚拟艺人或数字生命 IP 时，高精度的材质与光影设定直接决定了受众的“信任感”。通过系统性的变体推演，验证了该套材质逻辑在不同色彩情绪与打光环境下的极强<strong class="text-gray-400">“鲁棒性（Robustness）”</strong>，为后续的衍生品开发与动态 CG 制作输出了极其稳定、可复制的视觉规范（Style Guide）。
                     </p>
                 </div>
 
@@ -585,14 +612,28 @@
                         <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow03.png?raw=true" alt="最终合成" class="w-full md:w-[36%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                     </div>
 
-                    <div class="space-y-4">
-                        <h5 class="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                    <!-- 重构的：技术实施与工作流搭建 -->
+                    <div class="space-y-6 mt-8">
+                        <h5 class="text-white font-bold text-base md:text-lg mb-4 flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
-                            换脸工作流 <span class="text-xs text-gray-500 font-normal uppercase ml-2">Workflow Process</span>
+                            技术实施与工作流搭建 <span class="text-[10px] md:text-xs text-gray-500 font-normal uppercase ml-2">Tech & Workflow Pipeline</span>
                         </h5>
-                        <p class="text-xs text-gray-500 leading-relaxed border-l border-white/10 pl-4 md:max-w-[80%]">
-                            利用 Midjourney 完成时尚设计与视觉初稿生成，结合专属角色 LoRA 模型实现艺人面部特征融合与风格统一，完成从概念图到成品时尚大片的全流程 AI 视觉创作。
-                        </p>
+                        
+                        <div class="space-y-6 border-l border-white/10 pl-4 md:pl-6 max-w-[90%]">
+                            <div>
+                                <strong class="text-gray-200 text-sm block mb-1">✦ AIGC 工业化管线搭建：</strong>
+                                <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+                                    独立设计并落地了从概念生成到高保真交付的 AIGC 图像工作流。利用 Midjourney 确立场景光影与时尚基调，结合 ComfyUI 节点网络与专属角色 LoRA 模型，彻底解决 AI 生成过程中的“人物特征随机性”痛点。
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <strong class="text-gray-200 text-sm block mb-1">✦ 高精度特征融合 (Identity Preservation)：</strong>
+                                <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+                                    攻克了跨风格图像的特征迁移技术。在保持品牌视觉调性（如 Cinematic 美学）绝对统一的前提下，实现了“目标人物/代言人”面部结构、肤质细节与光影环境的像素级自然融合。
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -607,7 +648,7 @@
                 <div class="mb-12">
                     <h3 class="text-xl md:text-2xl font-bold tracking-wide leading-snug">
                         Project Name: [The Stoic Series] — Emotional Resilience in AIGC Storytelling<br>
-                        项目名称：冷静系列：AIGC 叙事中的情感韧性
+                        项目名称：冷静系列--AIGC 叙事中的情感韧性
                     </h3>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Vertical Ad</span> <span>/</span> <span>AIGC Storytelling</span> <span>/</span> <span>Emotional Resilience</span>
@@ -660,6 +701,88 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 🌟 新增：项目深度描述与能力迁移 -->
+                <div class="mt-16 lg:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 bg-[#111] p-6 md:p-10 rounded-2xl border border-white/10">
+                    
+                    <!-- 左侧：视觉锚点与策略摘要 -->
+                    <div class="lg:col-span-4 flex flex-col justify-start">
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-4 border-b border-white/10 pb-4">
+                            Strategic Narrative
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">
+                            突破贴片广告“5秒跳过”的注意力瓶颈，建立适用于海外高要求市场（Top-tier Markets）的 AIGC 视频广告投流视觉范式。
+                        </p>
+                        <!-- 装饰性元素 -->
+                        <div class="hidden lg:flex gap-2 opacity-50 mt-auto">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                            <div class="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧：详细结构化说明 -->
+                    <div class="lg:col-span-8 space-y-10">
+                        
+                        <!-- 项目背景 -->
+                        <div>
+                            <h5 class="text-white font-bold text-base md:text-lg mb-3 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                                项目背景 <span class="text-[10px] md:text-xs text-gray-500 font-normal uppercase ml-2">Project Background</span>
+                            </h5>
+                            <p class="text-xs md:text-sm text-gray-400 leading-relaxed border-l border-white/10 pl-4">
+                                为配合公司旗下艺人进军欧美市场的新 MV 宣发，主导设计名为《If... Arrives》的系列 YouTube，Pinterest 贴片广告。针对欧美受众对传统“高饱和、重包装”偶像视觉的审美疲劳，确立了以“电影叙事（Cinematic Narrative）”和“末日反差美学”为核心的视觉重构策略，旨在突破贴片广告“5秒跳过”的注意力瓶颈。
+                            </p>
+                        </div>
+
+                        <!-- 核心贡献与技术实施 -->
+                        <div>
+                            <h5 class="text-white font-bold text-base md:text-lg mb-4 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                                核心贡献与技术实施 <span class="text-[10px] md:text-xs text-gray-500 font-normal uppercase ml-2">Core Contributions & Tech</span>
+                            </h5>
+                            <div class="space-y-5 border-l border-white/10 pl-4">
+                                <div>
+                                    <strong class="text-gray-200 text-sm block mb-1">✦ 跨文化美学降维定位：</strong>
+                                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+                                        摒弃常规偶像广告的糖水色调，精准切中欧美年轻圈层推崇的“A24 独立电影质感”与“废土/末日（Apocalyptic）美学”。通过引入 35mm 胶片颗粒与极端的冷暖光影对撞，为 Idol 打造极具国际化与先锋感的高奢视觉人设。
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong class="text-gray-200 text-sm block mb-1">✦ “黄金5秒”注意力工程与 Sora 调度：</strong>
+                                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+                                        针对贴片广告的转化漏斗，利用 Sora 实现了极高难度的动态张力控制。0-2秒以“电视雪花+末日警报”的剧烈手持镜头制造全局恐慌（视觉 Hook），紧接着在第2-4秒以极致平稳的慢镜头切入海滩与冰块气泡微距特写（Macro Shot）。通过动静结合与极端的感官反差，强制锁定用户注意力。
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong class="text-gray-200 text-sm block mb-1">✦ AIGC 工业化管线与物理真实感：</strong>
+                                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+                                        深度调优 Sora 提示词模型，攻克复杂物理交互难题。完美呈现了“防晒喷雾在阳光下形成的虹光物理反馈”与“陨石坠落的高光反射”，确保最终成片达到好莱坞级别的商业交付标准。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 项目产出与能力迁移价值 (高亮强调区) -->
+                        <div class="bg-purple-900/20 border border-purple-500/30 p-5 md:p-6 rounded-xl hover:bg-purple-900/30 transition-colors">
+                            <h5 class="text-white font-bold text-base md:text-lg mb-3 flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                                </svg>
+                                项目产出与能力迁移价值
+                            </h5>
+                            <div class="space-y-3">
+                                <p class="text-xs md:text-sm text-gray-200 leading-relaxed font-bold border-b border-purple-500/20 pb-3">
+                                    成功建立了一套适用于海外高要求市场（Top-tier Markets）的 AIGC 视频广告投流视觉范式。
+                                </p>
+                                <p class="text-xs md:text-sm text-purple-200/80 leading-relaxed">
+                                    <span class="text-purple-400 font-bold mr-1">【迁移潜能】</span>该项目验证的“宏大叙事包裹核心主体”、“极端情绪下的从容感”以及“高转化率的视觉 Hook 设计”，可无缝迁移至全球化金融产品的品牌大片、投教宣发及高净值客户（HNWI）的品牌信任感构建中，有效降低出海获客的视觉沟通成本。
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -702,10 +825,10 @@
             <div class="relative z-10">
                 <div class="mb-12">
                     <h3 class="text-xl md:text-2xl font-bold tracking-wide">
-                        欧美卡通风格游戏《才不是童话》日韩台上线
+                        项目名称：欧美卡通风格游戏《才不是童话》日韩台上线
                     </h3>
                     <p class="text-xs text-gray-400 mt-3 tracking-wide">
-                        The dark fairy tale-style mobile game "It's Not a Fairy Tale" (also known as "The Dark Fairy Tale") has been launched in Japan, South Korea, and Taiwan.
+                        Project Name: The dark fairy tale-style mobile game "It's Not a Fairy Tale" (also known as "The Dark Fairy Tale") has been launched in Japan, South Korea, and Taiwan.
                     </p>
                     <div class="flex flex-wrap gap-4 mt-6 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Dark Fairy Tale</span> <span>/</span> <span>Mobile Game</span> <span>/</span> <span>Scene Design</span>
@@ -981,8 +1104,8 @@
                         利用 3D 工具构建底层空间与透视逻辑，精准修复 AI 生成中的结构错乱与物理失真。
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">3D Modeling</span>
-                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Spatial Control</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Blender</span>
+                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">MAYA</span>
                     </div>
                 </div>
 
@@ -1004,7 +1127,6 @@
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Photoshop</span>
-                        <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Blender</span>
                         <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">After Effects</span>
                         <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">Illustrator</span>
                         <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-md hover:bg-purple-500/20 hover:border-purple-500/50 transition-colors">CapCut 剪映</span>
