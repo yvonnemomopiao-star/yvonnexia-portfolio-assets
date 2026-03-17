@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 强制页面使用浅色模式，防止手机浏览器跟随系统强制反转白底变黑底 -->
     <meta name="color-scheme" content="light">
     <meta name="supported-color-schemes" content="light">
-    <!-- 新增：专门针对微信、QQ、部分国产安卓内置浏览器的“防强制深色模式”标记 -->
     <meta name="nightmode" content="disable">
     <meta name="force-dark-mode" content="false">
     <meta name="theme-color" content="#ffffff">
     <title>XIA YIJING - Portfolio 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // 核心修改：通过配置强行覆盖默认的紫调，改为您指定的偏蓝紫 (103, 51, 234)
         tailwind.config = {
             theme: {
                 extend: {
@@ -25,7 +22,7 @@
                             300: '#b1a4f1',
                             400: '#8f77e9',
                             500: '#724ee0',
-                            600: '#6733ea', // 就是您想要的 rgb(103, 51, 234)
+                            600: '#6733ea',
                             700: '#5824cd',
                             800: '#481fa7',
                             900: '#3d1a88',
@@ -64,16 +61,15 @@
             scrollbar-width: none;
         }
 
-        /* 自定义横向滚动条 (用于 Project 04 侧滑图片) */
         .custom-scrollbar::-webkit-scrollbar {
             height: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1); /* 10% 透明度底色 */
+            background: rgba(255, 255, 255, 0.1); 
             border-radius: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(103, 51, 234, 0.5); /* 统一修改为新颜色的 RGB */
+            background: rgba(103, 51, 234, 0.5); 
             border-radius: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -82,35 +78,6 @@
         .custom-scrollbar {
             scrollbar-width: thin;
             scrollbar-color: rgba(103, 51, 234, 0.5) rgba(255, 255, 255, 0.1);
-        }
-
-        /* 占位框与标签样式 */
-        .placeholder-box {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .placeholder-box:hover {
-            border-color: #666;
-            color: #aaa;
-        }
-        .img-tag {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 10px;
-            background: rgba(0,0,0,0.5);
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: #aaa;
         }
     </style>
 </head>
@@ -156,6 +123,7 @@
 
         <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/title.png?raw=true" 
              alt="XIA YIJING Portfolio 2026 - Artwork" 
+             fetchpriority="high"
              class="absolute top-1/2 left-1/2 z-50 
                     w-[360px] md:w-[700px] object-contain opacity-100 
                     -translate-x-1/2 -translate-y-1/2 
@@ -164,7 +132,7 @@
 
         <!-- 背景投影 -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-            <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/shadow.png" class="mt-[150px] md:mt-[250px] w-64 md:w-[320px] opacity-80 blur-md mix-blend-multiply">
+            <img src="https://raw.githubusercontent.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/main/shadow.png" fetchpriority="high" class="mt-[150px] md:mt-[250px] w-64 md:w-[320px] opacity-80 blur-md mix-blend-multiply">
         </div>
     </section>
 
@@ -183,16 +151,17 @@
             
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 relative z-10">
                 <div class="md:col-span-4 lg:col-span-3 flex flex-col gap-4 lg:gap-6">
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/topview.jpg?raw=true" alt="MV Concept" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/planA.jpg?raw=true" alt="Plan A" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/planB.jpg?raw=true" alt="Plan B" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/planC.jpg?raw=true" alt="Plan C" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/topview.jpg?raw=true" fetchpriority="high" alt="MV Concept" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/planA.jpg?raw=true" fetchpriority="high" alt="Plan A" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/planB.jpg?raw=true" fetchpriority="high" alt="Plan B" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/planC.jpg?raw=true" fetchpriority="high" alt="Plan C" class="w-full object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-colors">
                 </div>
                 
                 <div class="md:col-span-8 lg:col-span-6">
                     <div class="relative w-full h-[400px] md:h-[450px] lg:h-full min-h-[400px] lg:min-h-[800px] rounded-md border border-white/10 overflow-hidden group select-none">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/building.jpg?raw=true" alt="修改后的主视觉" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
-                        <img id="project01CompareImage" src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/buildingbase.jpg?raw=true" alt="修改前的主视觉" class="absolute inset-0 w-full h-full object-cover pointer-events-none bg-[#111]" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/building.jpg?raw=true" fetchpriority="high" alt="修改后的主视觉" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                        <img id="project01CompareImage" src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/buildingbase.jpg?raw=true" fetchpriority="high" alt="修改前的主视觉" class="absolute inset-0 w-full h-full object-cover pointer-events-none bg-[#111]" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                        
                         <div id="project01CompareHandle" class="absolute top-0 bottom-0 w-[2px] bg-purple-500 left-[50%] pointer-events-none z-10 flex items-center justify-center -translate-x-1/2 shadow-[0_0_15px_rgba(103,51,234,0.6)] transition-opacity duration-300">
                             <div class="w-10 h-10 bg-black/80 backdrop-blur-md border-2 border-purple-500 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(103,51,234,0.5)]">
                                 <div class="flex gap-[3px]">
@@ -203,16 +172,19 @@
                             <span class="absolute top-8 left-6 bg-black/60 backdrop-blur-md text-white text-[10px] tracking-widest px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg border border-white/5">AFTER (最终)</span>
                             <span class="absolute top-8 right-6 bg-black/60 backdrop-blur-md text-white text-[10px] tracking-widest px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg border border-white/5">BEFORE (白模)</span>
                         </div>
+                        
                         <input type="range" min="0" max="100" value="50" id="project01CompareSlider" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 m-0 p-0 appearance-none">
                     </div>
                 </div>
 
                 <div class="md:col-span-12 lg:col-span-3 flex flex-col justify-start pt-6 md:pt-10 lg:pt-0">
                     <div class="mb-6 lg:mb-10">
-                        <h3 class="text-lg md:text-xl lg:text-2xl font-bold tracking-wide leading-snug">
-                            Project Name: Concept Design for the Music Video"If the police Arrive"<br>
+                        <h3 class="text-xl md:text-2xl font-bold tracking-wide leading-snug">
                             项目名称：《If the police arrive》MV场景概念设计
                         </h3>
+                        <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                            Project Name: Concept Design for the Music Video "If the police Arrive"
+                        </p>
                         <div class="flex flex-wrap gap-2 lg:gap-3 mt-4 text-[10px] lg:text-xs tracking-widest text-purple-400 uppercase font-medium">
                             <span>Volumetric Moonlight</span> <span>/</span> <span>Cyber-Noir</span> <span>/</span> <span>Cinematic Depth</span>
                         </div>
@@ -261,13 +233,18 @@
             </div>
         </div>
 
-        <!-- ================= Project 02 (原05：Dark Angel 换脸大作) ================= -->
+        <!-- ================= Project 02 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
             <div class="absolute -top-20 md:-top-32 right-0 md:-right-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">02</div>
 
             <div class="relative z-10">
                 <div class="mb-12">
-                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">Project Name: Dark Angel - Cinematic Fashion Study<br>项目名称：黑暗天使 - 电影时尚研究</h3>
+                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">
+                        项目名称：黑暗天使 - 电影时尚研究
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: Dark Angel - Cinematic Fashion Study
+                    </p>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>High-Fashion K-Pop Aesthetic</span> <span>/</span> <span>Dark Moonlight</span> <span>/</span> <span>Ethereal Realism</span>
                     </div>
@@ -324,23 +301,23 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                         <div class="flex flex-col">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui05.jpg?raw=true" alt="comfyui换脸" class="w-full h-[400px] md:h-[300px] lg:h-[500px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui05.jpg?raw=true" loading="lazy" decoding="async" alt="comfyui换脸" class="w-full h-[400px] md:h-[300px] lg:h-[500px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
                             <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">MIDJOURNEY原图</p>
                         </div>
 
                         <div class="flex flex-col justify-between gap-6 lg:gap-8">
                             <div class="flex flex-col">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui02.jpg?raw=true" alt="IDOL单人MV预告截图" class="w-full h-[200px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui02.jpg?raw=true" loading="lazy" decoding="async" alt="IDOL单人MV预告截图" class="w-full h-[200px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
                                 <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">IDOL单人MV预告截图</p>
                             </div>
                             <div class="flex flex-col">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui06.jpg?raw=true" alt="LORA换脸" class="w-full h-[200px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui06.jpg?raw=true" loading="lazy" decoding="async" alt="LORA换脸" class="w-full h-[200px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
                                 <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">COMFYUI</p>
                             </div>
                         </div>
 
                         <div class="flex flex-col">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui.jpg?raw=true" alt="AI换脸后" class="w-full h-[400px] md:h-[300px] lg:h-[500px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui.jpg?raw=true" loading="lazy" decoding="async" alt="AI换脸后" class="w-full h-[400px] md:h-[300px] lg:h-[500px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
                             <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">AI换脸后</p>
                         </div>
                     </div>
@@ -350,15 +327,15 @@
                     <h4 class="text-sm font-bold text-gray-500 mb-8 uppercase tracking-widest border-b border-white/10 pb-4">Part 3: Face Swap Workflow</h4>
                     
                     <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6 mb-12 w-full">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow01.png?raw=true" alt="Midjourney初稿" class="w-full md:w-[36%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow01.png?raw=true" loading="lazy" decoding="async" alt="Midjourney初稿" class="w-full md:w-[36%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                         
                         <span class="text-3xl md:text-4xl font-black text-purple-600 select-none">+</span>
                         
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow02.jpg?raw=true" alt="真人参考" class="w-1/2 md:w-[18%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow02.jpg?raw=true" loading="lazy" decoding="async" alt="真人参考" class="w-1/2 md:w-[18%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                         
                         <span class="text-3xl md:text-4xl font-black text-purple-600 select-none">=</span>
                         
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow03.png?raw=true" alt="最终合成" class="w-full md:w-[36%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow03.png?raw=true" loading="lazy" decoding="async" alt="最终合成" class="w-full md:w-[36%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                     </div>
 
                     <div class="space-y-6 mt-8">
@@ -400,16 +377,18 @@
             </div>
         </div>
 
-        <!-- ================= Project 03 (原06：冷静系列广告) ================= -->
+        <!-- ================= Project 03 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
             <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">03</div>
 
             <div class="relative z-10">
                 <div class="mb-12">
                     <h3 class="text-xl md:text-2xl font-bold tracking-wide leading-snug">
-                        Project Name: [The Stoic Series] — Emotional Resilience in AIGC Storytelling<br>
-                        项目名称：冷静系列--AIGC 叙事中的情感韧性
+                        项目名称：冷静系列——AIGC 叙事中的情感韧性
                     </h3>
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: [The Stoic Series] — Emotional Resilience in AIGC Storytelling
+                    </p>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Vertical Ad</span> <span>/</span> <span>AIGC Storytelling</span> <span>/</span> <span>Emotional Resilience</span>
                     </div>
@@ -418,7 +397,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 mb-10">
                     <div class="flex flex-col items-center">
                         <div class="w-full max-w-[320px] lg:max-w-[360px] aspect-[9/16] rounded-xl border border-white/10 overflow-hidden shadow-2xl relative group hover:border-purple-500/50 transition-all">
-                            <video class="w-full h-full object-cover bg-[#111]" controls loop muted playsinline preload="metadata">
+                            <video class="w-full h-full object-cover bg-[#111] stoic-video" data-no-autoplay="true" controls loop muted playsinline preload="none" poster="https://res.cloudinary.com/duzkdvaki/video/upload/f_auto,q_auto,so_0/v1772472418/LOVE_fidcxl.jpg">
                                 <source src="https://res.cloudinary.com/duzkdvaki/video/upload/v1772472418/LOVE_fidcxl.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -433,7 +412,7 @@
 
                     <div class="flex flex-col items-center">
                         <div class="w-full max-w-[320px] lg:max-w-[360px] aspect-[9/16] rounded-xl border border-white/10 overflow-hidden shadow-2xl relative group hover:border-purple-500/50 transition-all">
-                            <video class="w-full h-full object-cover bg-[#111]" controls loop muted playsinline preload="metadata">
+                            <video class="w-full h-full object-cover bg-[#111] stoic-video" data-no-autoplay="true" controls loop muted playsinline preload="none" poster="https://res.cloudinary.com/duzkdvaki/video/upload/f_auto,q_auto,so_0/v1772472515/Meteorites_lktu5d.jpg">
                                 <source src="https://res.cloudinary.com/duzkdvaki/video/upload/v1772472515/Meteorites_lktu5d.mp4" type="video/mp4">
                             </video>
                         </div>
@@ -522,13 +501,18 @@
             </div>
         </div>
 
-        <!-- ================= Project 04 (原02：Cyber-Ethereal 1) ================= -->
+        <!-- ================= Project 04 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 mb-40 relative">
             <div class="absolute -top-20 md:-top-32 right-0 md:-right-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">04</div>
             
             <div class="relative z-10">
                 <div class="mb-12">
-                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">Project Name: Cyber-Ethereal Stage Visual & Android Concept<br>项目名称：K-Pop 舞台视觉与仿生人概念设计</h3>
+                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">
+                        项目名称：K-Pop 舞台视觉与仿生人概念设计
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: Cyber-Ethereal Stage Visual & Android Concept
+                    </p>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Liquid-Chrome Fluidity</span> <span>/</span> <span>Iridescent Porcelain</span> <span>/</span> <span>Anisotropic Metal</span>
                     </div>
@@ -543,11 +527,11 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 mb-10">
                     <div>
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/left.jpg?raw=true" class="w-full aspect-video object-cover rounded-md mb-4 border border-white/10" alt="Initial AI Generation">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/left.jpg?raw=true" loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-md mb-4 border border-white/10" alt="Initial AI Generation">
                         <p class="text-center text-xs text-gray-400 mt-2 tracking-widest font-bold">Initial AI Generation <span class="font-normal">AI原图</span></p>
                     </div>
                     <div>
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/right.jpg?raw=true" class="w-full aspect-video object-cover rounded-md mb-4 border border-white/10" alt="Structural Refinement">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/right.jpg?raw=true" loading="lazy" decoding="async" class="w-full aspect-video object-cover rounded-md mb-4 border border-white/10" alt="Structural Refinement">
                         <p class="text-center text-xs text-gray-400 mt-2 tracking-widest font-bold">Structural Refinement <span class="font-normal">结构优化</span></p>
                     </div>
                 </div>
@@ -582,8 +566,8 @@
                     <div class="flex flex-col h-full">
                         <h4 class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-widest border-b border-white/10 pb-4">Midjourney 原图 <span class="font-normal text-xs ml-2 text-gray-600">Original Generation</span></h4>
                         <div class="grid grid-cols-2 gap-4 flex-grow w-full">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/red02.jpg?raw=true" class="w-full h-[350px] lg:h-full object-contain bg-[#111] rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="Midjourney 原图 1">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/red.jpg?raw=true" class="w-full h-[350px] lg:h-full object-contain bg-[#111] rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="Midjourney 原图 2">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/red02.jpg?raw=true" loading="lazy" decoding="async" class="w-full h-[350px] lg:h-full object-contain bg-[#111] rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="Midjourney 原图 1">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/red.jpg?raw=true" loading="lazy" decoding="async" class="w-full h-[350px] lg:h-full object-contain bg-[#111] rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="Midjourney 原图 2">
                         </div>
                     </div>
 
@@ -592,17 +576,17 @@
                         <div class="mb-6 lg:mb-0">
                             <h4 class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-widest border-b border-white/10 pb-4">AI 修复过程图 <span class="font-normal text-xs ml-2 text-gray-600">Restoration Process</span></h4>
                             <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step01.jpg?raw=true" class="md:col-span-3 w-full h-auto md:h-[320px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 1">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step02.jpg?raw=true" class="md:col-span-5 w-full h-auto md:h-[320px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 2">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step03.jpg?raw=true" class="md:col-span-4 w-full h-auto md:h-[320px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 3">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step01.jpg?raw=true" loading="lazy" decoding="async" class="md:col-span-3 w-full h-auto md:h-[320px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 1">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step02.jpg?raw=true" loading="lazy" decoding="async" class="md:col-span-5 w-full h-auto md:h-[320px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 2">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step03.jpg?raw=true" loading="lazy" decoding="async" class="md:col-span-4 w-full h-auto md:h-[320px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 3">
                             </div>
                         </div>
 
                         <div class="mt-6 lg:mt-8">
                             <h4 class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-widest border-b border-white/10 pb-4">Tool Integration <span class="font-normal text-xs ml-2 text-gray-600">PS + NANO BANANA + COMFYUI</span></h4>
                             <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step04.jpg?raw=true" class="md:col-span-5 w-full h-auto md:h-[300px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 4">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step05.jpg?raw=true" class="md:col-span-7 w-full h-auto md:h-[300px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 5">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step04.jpg?raw=true" loading="lazy" decoding="async" class="md:col-span-5 w-full h-auto md:h-[300px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 4">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project02/step05.jpg?raw=true" loading="lazy" decoding="async" class="md:col-span-7 w-full h-auto md:h-[300px] object-cover rounded-md border border-white/10 hover:border-purple-500/50 transition-all" alt="过程图 5">
                             </div>
                         </div>
 
@@ -622,13 +606,18 @@
             </div>
         </div>
 
-        <!-- ================= Project 05 (原03：Cyber-Ethereal 2) ================= -->
+        <!-- ================= Project 05 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 mb-40 relative">
             <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">05</div>
 
             <div class="relative z-10">
                 <div class="mb-12">
-                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">Project Name: Cyber-Ethereal Stage Visual 2<br>项目名称：K-Pop 舞台视觉与仿生人概念设计 2</h3>
+                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">
+                        项目名称：K-Pop 舞台视觉与仿生人概念设计 2
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: Cyber-Ethereal Stage Visual 2
+                    </p>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Humanoid</span> <span>/</span> <span>Inorganic Texture</span> <span>/</span> <span>Futuristic Digital Life</span>
                     </div>
@@ -648,7 +637,7 @@
                         </div>
                     </div>
                     <div class="md:col-span-8">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project03/humanoid.jpg?raw=true" alt="主视觉人像" class="w-full aspect-[16/9] md:aspect-[4/3] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-colors">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project03/humanoid.jpg?raw=true" loading="lazy" decoding="async" alt="主视觉人像" class="w-full aspect-[16/9] md:aspect-[4/3] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-colors">
                     </div>
                 </div>
 
@@ -657,7 +646,7 @@
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                         <div class="relative group">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project03/03.jpg?raw=true" alt="美学逻辑图" class="w-full rounded-lg border border-white/10 group-hover:border-purple-500/30 transition-all duration-500">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project03/03.jpg?raw=true" loading="lazy" decoding="async" alt="美学逻辑图" class="w-full rounded-lg border border-white/10 group-hover:border-purple-500/30 transition-all duration-500">
                             <div class="absolute bottom-4 right-4 text-[10px] text-gray-500 bg-black/80 px-2 py-1 rounded">Material Analysis</div>
                         </div>
 
@@ -699,7 +688,7 @@
 
                 <div>
                     <h4 class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-widest border-b border-white/10 pb-4">Variations <span class="font-normal text-xs ml-2 text-gray-600">Color Psychology Settings</span></h4>
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project03/04.jpg?raw=true" alt="变体推演" class="w-full rounded-lg border border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project03/04.jpg?raw=true" loading="lazy" decoding="async" alt="变体推演" class="w-full rounded-lg border border-white/10 opacity-90 hover:opacity-100 transition-opacity">
                     <p class="text-center text-[10px] text-gray-600 mt-3 tracking-widest font-bold">
                         Under the same theme, different hues or materials were used to test the aesthetic stability.
                     </p>
@@ -718,13 +707,18 @@
             </div>
         </div>
         
-        <!-- ================= Project 06 (原04：Boss 手办) ================= -->
+        <!-- ================= Project 06 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
             <div class="absolute -top-20 md:-top-32 right-0 md:-right-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">06</div>
 
             <div class="relative z-10">
                 <div class="mb-12">
-                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">Project Name: K-Pop Q-version Figurines - BOSS Series<br>项目名称：K-Pop Q版手办——BOSS系列</h3>
+                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">
+                        项目名称：K-Pop Q版手办——BOSS系列
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: K-Pop Q-version Figurines - BOSS Series
+                    </p>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>IP Design</span> <span>/</span> <span>Character Consistency</span> <span>/</span> <span>Commercial Standard</span>
                     </div>
@@ -732,7 +726,7 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-[65fr_35fr] gap-6 lg:gap-8 mb-10">
                     <div class="w-full h-[300px] md:h-[400px] lg:h-[450px] overflow-x-auto overflow-y-hidden custom-scrollbar rounded-lg border border-white/10 hover:border-purple-500/50 transition-all relative group cursor-ew-resize">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project04/boss01.jpg?raw=true" alt="K-Pop Q版手办" class="h-full w-auto max-w-none block" draggable="false">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project04/boss01.jpg?raw=true" loading="lazy" decoding="async" alt="K-Pop Q版手办" class="h-full w-auto max-w-none block" draggable="false">
                         <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center gap-2 shadow-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -741,7 +735,7 @@
                         </div>
                     </div>
                     
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project04/boss02.jpg?raw=true" alt="K-Pop 团体" class="w-full h-[300px] md:h-[500px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project04/boss02.jpg?raw=true" loading="lazy" decoding="async" alt="K-Pop 团体" class="w-full h-[300px] md:h-[500px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all">
                 </div>
                 
                 <div class="space-y-4">
@@ -762,16 +756,21 @@
 
             <div class="relative z-10">
                 <div class="mb-12">
-                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">Project Name: Starry Night Devil Ray<br>项目名称：星空魔鬼鱼</h3>
+                    <h3 class="text-xl md:text-2xl font-bold tracking-wide">
+                        项目名称：星空魔鬼鱼
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: Starry Night Devil Ray
+                    </p>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Bio-Luminescent Subsurface Scattering</span> <span>/</span> <span>Ethereal Cosmic-Aquatic</span> <span>/</span> <span>Nebulaic Epidermal Texture</span>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project06/01.jpg?raw=true" alt="Starry Night Devil Ray 1" class="w-full h-[300px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project06/02.jpg?raw=true" alt="Starry Night Devil Ray 2" class="w-full h-[300px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project06/03.jpg?raw=true" alt="Starry Night Devil Ray 3" class="w-full h-[300px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project06/01.jpg?raw=true" loading="lazy" decoding="async" alt="Starry Night Devil Ray 1" class="w-full h-[300px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project06/02.jpg?raw=true" loading="lazy" decoding="async" alt="Starry Night Devil Ray 2" class="w-full h-[300px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                    <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project06/03.jpg?raw=true" loading="lazy" decoding="async" alt="Starry Night Devil Ray 3" class="w-full h-[300px] lg:h-[450px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                 </div>
 
                 <div class="space-y-4">
@@ -786,15 +785,15 @@
             </div>
         </div>
 
-        <!-- 🌟 新增：美学底座 包装 (The Foundation of Aesthetics) -->
+        <!-- 🌟 修改：美学底座 包装 (重写了文案，更显资深与沉稳) -->
         <div class="max-w-[1024px] mx-auto px-6 md:px-12 mt-48 mb-32 text-center relative z-10">
             <h2 class="text-3xl md:text-5xl font-black tracking-[0.1em] mb-4 text-white">THE FOUNDATION OF AESTHETICS</h2>
             <p class="text-purple-400 tracking-widest text-sm uppercase font-bold mb-8">美学底座：11年传统2D原画与一线动画场景经验</p>
             <div class="bg-[#111] border border-white/10 p-8 rounded-2xl relative overflow-hidden group hover:border-purple-500/50 transition-colors shadow-2xl">
                 <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-400 to-purple-800"></div>
                 <p class="text-sm md:text-base text-gray-400 leading-relaxed text-left pl-4">
-                    <strong class="text-white text-lg block mb-4">“不被 AI 的随机性绑架，依靠深厚的美学底座进行精准干预。”</strong>
-                    对透视、光影解剖与色彩情绪的严苛肌肉记忆，是我如今构建 AIGC 视觉管线的核心壁垒。这使我能在 AI 泛滥的“塑料感”中，依靠纯正的人工美学干预（Human-in-the-loop）将画面拉回顶级商业质感。以下是我早年积累的部分传统美术实战案例。
+                    <strong class="text-white text-lg block mb-4">“不被 AI 的随机性盲盒绑架，依靠系统性的审美沉淀进行精准干预。”</strong>
+                    十余年传统美术实战所沉淀的系统性审美，与对透视、光影解剖的深刻理解，是我如今驾驭 AIGC 视觉管线的坚实基石。这使我能在面对 AI 泛滥的“同质化”与“塑料感”时，依靠精准的人工美学干预（Human-in-the-loop），将画面重新锚定至顶级商业交付标准。以下是我早年积累的部分传统美术实战案例。
                 </p>
             </div>
         </div>
@@ -808,8 +807,8 @@
                     <h3 class="text-xl md:text-2xl font-bold tracking-wide">
                         项目名称：欧美卡通风格游戏《才不是童话》日韩台上线
                     </h3>
-                    <p class="text-xs text-gray-400 mt-3 tracking-wide">
-                        Project Name: The dark fairy tale-style mobile game "It's Not a Fairy Tale" (also known as "The Dark Fairy Tale") has been launched in Japan, South Korea, and Taiwan.
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: The dark fairy tale-style mobile game "It's Not a Fairy Tale" has been launched in Japan, South Korea, and Taiwan.
                     </p>
                     <div class="flex flex-wrap gap-4 mt-6 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Dark Fairy Tale</span> <span>/</span> <span>Mobile Game</span> <span>/</span> <span>Scene Design</span>
@@ -818,11 +817,11 @@
 
                 <div class="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-6">
                     <div class="col-span-6 grid grid-cols-2 gap-2 md:gap-4 lg:gap-6">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/05.jpg?raw=true" alt="无UI战斗场景1" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/06.jpg?raw=true" alt="无UI战斗场景2" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/05.jpg?raw=true" loading="lazy" decoding="async" alt="无UI战斗场景1" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/06.jpg?raw=true" loading="lazy" decoding="async" alt="无UI战斗场景2" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                     </div>
                     <div class="col-span-6 flex flex-col justify-center">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/game.jpg?raw=true" alt="游戏网络截图" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-contain rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/game.jpg?raw=true" loading="lazy" decoding="async" alt="游戏网络截图" class="w-full h-[120px] sm:h-[160px] md:h-[300px] lg:h-[480px] object-contain rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                     </div>
                 </div>
 
@@ -844,7 +843,6 @@
 
         <!-- 🌟 新增：Project 09 (依依恋物语 & 七日恋人) -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
-            <!-- 注意水印数字变为09，位置在左侧 -->
             <div class="absolute -top-20 md:-top-32 -left-4 md:-left-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">09</div>
 
             <div class="relative z-10">
@@ -852,7 +850,7 @@
                     <h3 class="text-xl md:text-2xl font-bold tracking-wide">
                         项目名称：女性向恋爱&换装游戏《依依恋物语》与《七日恋人》
                     </h3>
-                    <p class="text-xs text-gray-400 mt-3 tracking-wide">
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
                         Project Name: Otome Romance & Dress-up Games "Yiyi's Love Story" & "Seven Days Lover"
                     </p>
                     <div class="flex flex-wrap gap-4 mt-6 text-xs tracking-widest text-purple-400 uppercase font-medium">
@@ -860,25 +858,20 @@
                     </div>
                 </div>
 
-                <!-- 英雄大图排版展示上传的 Loading 图 -->
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 mb-10 items-center">
                     <div class="md:col-span-8">
-                        <!-- 🌟 修改：CSS 交互图层动效 (Layer Reveal) -->
                         <div class="relative w-full rounded-lg border border-white/10 shadow-lg overflow-hidden group cursor-crosshair aspect-video bg-[#111]">
-                            
-                            <!-- 底图：背景图 (您上传的 图片1.jpg) -->
-                            <!-- 请将下方的 placeholder 链接替换为您上传到 Github 的纯背景图链接 -->
                             <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project09/loading02.png?raw=true" 
+                                 loading="lazy" decoding="async"
                                  alt="七日恋人 场景底图" 
                                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                             
-                            <!-- 顶图：带人物的完整图 (10.jpg) -->
                             <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project09/loading.png?raw=true" 
+                                 loading="lazy" decoding="async"
                                  alt="七日恋人 Loading 插画" 
                                  class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out group-hover:opacity-0"
                                  onclick="openLightbox(this.src)">
                             
-                            <!-- 交互提示 Tag -->
                             <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md text-white text-[10px] md:text-xs px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center gap-2 shadow-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -917,17 +910,18 @@
             </div>
         </div>
 
-        <!-- ================= Project 10 (原09：物语系列) ================= -->
+        <!-- ================= Project 10 ================= -->
         <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative mb-40">
-            <!-- 注意水印数字变为10，位置在右侧 -->
             <div class="absolute -top-20 md:-top-32 right-0 md:-right-12 text-[10rem] md:text-[18rem] font-black text-white/5 select-none pointer-events-none z-0 font-sans leading-none">10</div>
 
             <div class="relative z-10">
                 <div class="mb-12">
                     <h3 class="text-xl md:text-2xl font-bold tracking-wide leading-snug">
-                        Project Name: Japanese Anime Series "Bakemonogatari & Nisemonogatari"<br>
                         项目名称：日本动画《物语系列——化物语，伪物语》
                     </h3>
+                    <p class="text-sm text-gray-400 mt-3 tracking-wide">
+                        Project Name: Japanese Anime Series "Bakemonogatari & Nisemonogatari"
+                    </p>
                     <div class="flex flex-wrap gap-4 mt-4 text-xs tracking-widest text-purple-400 uppercase font-medium">
                         <span>Japanese Anime</span> <span>/</span> <span>Background Art</span> <span>/</span> <span>2D Layout</span>
                     </div>
@@ -935,14 +929,14 @@
 
                 <div class="grid grid-cols-2 gap-4 md:gap-6 lg:gap-12 mb-10">
                     <div class="flex flex-col gap-2 md:gap-6">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/01.jpg?raw=true" alt="项目原图 1" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/03.jpg?raw=true" alt="项目原图 2" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/01.jpg?raw=true" loading="lazy" decoding="async" alt="项目原图 1" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/03.jpg?raw=true" loading="lazy" decoding="async" alt="项目原图 2" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                         <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest mt-2 border-t border-white/10 pt-2 md:pt-4">左图：项目原图 (Original Drawings)</p>
                     </div>
 
                     <div class="flex flex-col gap-2 md:gap-6">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/02.jpg?raw=true" alt="B站截图 1" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/04%20.jpg?raw=true" alt="B站截图 2" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/02.jpg?raw=true" loading="lazy" decoding="async" alt="B站截图 1" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project07/04%20.jpg?raw=true" loading="lazy" decoding="async" alt="B站截图 2" class="w-full h-[100px] sm:h-[140px] md:h-[220px] lg:h-[280px] object-cover object-center rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                         <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest mt-2 border-t border-white/10 pt-2 md:pt-4">右图：B站截图《化物语》第一章 & 《伪物语》第二章</p>
                     </div>
                 </div>
@@ -964,15 +958,13 @@
     <!-- 🌟 新增：About Me 版块 -->
     <section id="about" class="w-full bg-white text-gray-900 relative z-40 py-32 px-6 md:px-12 flex items-center justify-center min-h-[50vh]">
         <div class="max-w-[1024px] mx-auto w-full flex flex-col items-center">
-            <!-- 预留给包含字体和头像的整体 PNG 图片 -->
-            <!-- 请将您的图片上传至 Github 根目录并命名为 me.png -->
             <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/me.png?raw=true" 
+                 loading="lazy" decoding="async"
                  alt="HI~ THIS IS YVONNE!" 
                  class="w-full md:w-3/4 lg:w-2/3 object-contain hover:scale-105 transition-transform duration-500 cursor-zoom-in"
                  onclick="openLightbox(this.src)"
                  onerror="this.src='https://placehold.co/1000x400/ffffff/9333ea?text=HI~+THIS+IS+YVONNE+!&font=Montserrat'">
             
-            <!-- 个人基本信息卡片 -->
             <div class="mt-12 md:mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-12 w-full max-w-4xl px-8 py-10 bg-gray-50/50 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow duration-300">
                 <div class="flex flex-col border-l-[3px] border-purple-500 pl-4">
                     <span class="text-[10px] text-gray-400 tracking-[0.2em] uppercase mb-2 font-bold">Name / 姓名</span>
@@ -1004,10 +996,8 @@
                 </div>
             </div>
 
-            <!-- 🌟 新增：个人总结、荣誉与证书 -->
             <div class="mt-10 w-full max-w-4xl flex flex-col gap-8">
                 
-                <!-- 个人总结 -->
                 <div class="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-shadow duration-300">
                     <h4 class="text-xl font-black text-gray-900 mb-6 flex items-center gap-3">
                         <span class="w-8 h-1.5 bg-purple-500 rounded-full"></span>
@@ -1030,10 +1020,8 @@
                     </div>
                 </div>
 
-                <!-- 荣誉与证书 (双列布局) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     
-                    <!-- 个人荣誉 -->
                     <div class="bg-gray-50/80 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow duration-300">
                         <h4 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 border-b border-gray-200 pb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1066,7 +1054,6 @@
                         </ul>
                     </div>
 
-                    <!-- 证书 -->
                     <div class="bg-gray-50/80 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow duration-300">
                         <h4 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2 border-b border-gray-200 pb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1075,7 +1062,6 @@
                             Certifications <span class="text-xs font-normal text-gray-400 ml-2 tracking-widest">专业证书</span>
                         </h4>
                         
-                        <!-- 采用标签云 (Badge Cloud) 样式设计，增加视觉丰富度 -->
                         <div class="flex flex-wrap gap-3">
                             <span class="px-4 py-2 bg-white border border-gray-200 text-gray-700 text-sm rounded-lg shadow-sm hover:border-purple-300 hover:text-purple-600 transition-colors">
                                 高级漫画师
@@ -1100,7 +1086,6 @@
 
                 </div>
             </div>
-            <!-- 新增结束 -->
 
         </div>
     </section>
@@ -1114,10 +1099,8 @@
                 <p class="text-gray-400 mt-4 tracking-widest text-sm uppercase">前沿软件与工业化工作流 / 2D, 3D & AIGC</p>
             </div>
             
-            <!-- 技能重构：三列卡片布局 -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                 
-                <!-- 卡片 1：AIGC & 模型工作流 -->
                 <div class="bg-[#111] p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(103,51,234,0.15)] transition-all duration-300 group">
                     <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
                         <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
@@ -1142,7 +1125,6 @@
                     </div>
                 </div>
 
-                <!-- 卡片 2：3D 辅助与结构控制 -->
                 <div class="bg-[#111] p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(103,51,234,0.15)] transition-all duration-300 group">
                     <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
                         <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
@@ -1163,7 +1145,6 @@
                     </div>
                 </div>
 
-                <!-- 卡片 3：传统视觉与动态后期 -->
                 <div class="bg-[#111] p-8 rounded-2xl border border-white/10 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(103,51,234,0.15)] transition-all duration-300 group">
                     <div class="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
                         <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
@@ -1277,11 +1258,9 @@
         <h2 class="text-2xl font-bold mb-8">LET'S CONNECT</h2>
         <p class="text-gray-400 mb-8">Feel free to reach out for collaborations or just a say hi.</p>
         
-        <!-- 修改为左右排列的按钮组合 -->
         <div class="flex flex-wrap items-center justify-center gap-6 mt-8">
             <a href="mailto:1246599899@qq.com" class="inline-block border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all">Send Email / 发邮件</a>
             
-            <!-- 新的微信二维码胶囊按钮 -->
             <button onclick="openLightbox('https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/wechat.jpg?raw=true')" 
                     class="inline-block border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all cursor-pointer">
                 WECHAT / 微信
@@ -1290,7 +1269,6 @@
 
         <p class="text-xs text-gray-600 mt-20">© 2026 XIA YIJING. All Rights Reserved.</p>
     </footer>
-
 
     <!-- 4. 返回顶部按钮 -->
     <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
@@ -1327,7 +1305,6 @@
             }
         });
 
-        // ================= 新增：图片放大查看 (Lightbox) 功能 =================
         const lightbox = document.getElementById('imageLightbox');
         const lightboxImg = document.getElementById('lightboxImage');
 
@@ -1337,14 +1314,13 @@
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
             
-            // 延迟一帧触发渐显动画
             requestAnimationFrame(() => {
                 lightbox.classList.remove('opacity-0');
                 lightbox.classList.add('opacity-100');
                 lightboxImg.classList.remove('scale-95');
                 lightboxImg.classList.add('scale-100');
             });
-            document.body.style.overflow = 'hidden'; // 禁止页面背景滚动
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeLightbox() {
@@ -1354,32 +1330,27 @@
             lightboxImg.classList.remove('scale-100');
             lightboxImg.classList.add('scale-95');
             
-            // 等待动画结束后隐藏元素
             setTimeout(() => {
                 lightbox.classList.add('hidden');
                 lightbox.classList.remove('flex');
                 lightboxImg.src = '';
-                document.body.style.overflow = ''; // 恢复页面背景滚动
+                document.body.style.overflow = ''; 
             }, 300);
         }
 
-        // ================= 新增：Project 01 图像滑动对比交互 =================
         const p1Slider = document.getElementById('project01CompareSlider');
         const p1Image = document.getElementById('project01CompareImage');
         const p1Handle = document.getElementById('project01CompareHandle');
 
         if (p1Slider && p1Image && p1Handle) {
-            // 监听滑块的拖拽和点击滑动
             p1Slider.addEventListener('input', (e) => {
                 const sliderValue = e.target.value;
-                // 更新顶层图片(Before) 的裁切蒙版，实现左右划分
                 p1Image.style.clipPath = `polygon(0 0, ${sliderValue}% 0, ${sliderValue}% 100%, 0 100%)`;
-                // 同步移动中间的紫色指示线和把手
                 p1Handle.style.left = `${sliderValue}%`;
             });
         }
 
-        // Project 05 视频逻辑与画质切换
+        // Project 05 画质切换逻辑
         const video = document.getElementById('project05Video');
         const loader = document.getElementById('videoLoader');
         const qualitySelect = document.getElementById('videoQuality');
@@ -1393,7 +1364,6 @@
             const baseUrl = 'https://res.cloudinary.com/duzkdvaki/video/upload/';
             const videoPath = 'v1770885127/Paparazzi_2_gh9t3b.mp4';
 
-            // 检测是否为手机端 (宽度 <= 768px)，如果是则默认设置为 720p 画质
             if (window.innerWidth <= 768 && qualitySelect) {
                 qualitySelect.value = '720p';
                 video.setAttribute('data-src', baseUrl + 'h_720,q_auto,f_auto/' + videoPath);
@@ -1438,41 +1408,94 @@
                     }
                 });
             }
+        }
 
-            if ('IntersectionObserver' in window) {
-                const videoObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const videoEl = entry.target;
+        // ================= 核心优化：全局视频加载与强制暂停管控 =================
+        const allVideos = document.querySelectorAll('video');
+        if ('IntersectionObserver' in window) {
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const videoEl = entry.target;
+                    if (entry.isIntersecting) {
+                        // 当视频进入视野，如果还没加载 src，则进行加载
+                        if (videoEl.hasAttribute('data-src') && !videoEl.getAttribute('src')) {
                             videoEl.src = videoEl.getAttribute('data-src');
-                            videoEl.preload = 'auto';
                             videoEl.load(); 
-                            
+                        }
+                        
+                        // 🌟 优化：只有不带 data-no-autoplay 属性的视频才会自动播放
+                        if (!videoEl.hasAttribute('data-no-autoplay')) {
                             const playPromise = videoEl.play(); 
                             if (playPromise !== undefined) {
                                 playPromise.catch(error => {
                                     console.warn("视频自动播放被浏览器拦截:", error);
                                 });
                             }
-                            
-                            observer.unobserve(videoEl);
                         }
-                    });
-                }, {
-                    rootMargin: '0px 0px 300px 0px' 
+                    } else {
+                        // 一旦视频完全划出屏幕区域，强制触发暂停！
+                        if (!videoEl.paused) {
+                            videoEl.pause();
+                        }
+                    }
                 });
-                videoObserver.observe(video);
-            } else {
-                video.src = video.getAttribute('data-src');
-                video.preload = 'auto';
-                
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.warn("视频自动播放被浏览器拦截:", error);
-                    });
+            }, {
+                rootMargin: '50px 0px', // 在接近屏幕 50px 时提前一点触发
+                threshold: 0.01 // 只要有一点点离开屏幕就触发暂停
+            });
+            
+            // 将页面上所有的视频（包括后续新增的视频）都纳入该监听器的管理范围
+            allVideos.forEach(v => videoObserver.observe(v));
+        } else {
+            // 兼容不支持 IntersectionObserver 的极少数老旧浏览器
+            allVideos.forEach(v => {
+                if(v.hasAttribute('data-src')) v.src = v.getAttribute('data-src');
+                if (!v.hasAttribute('data-no-autoplay')) {
+                    const playPromise = v.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(e => console.warn(e));
+                    }
                 }
-            }
+            });
+        }
+
+        // ================= 新增：互斥播放逻辑 (Mutual Exclusive Playback) =================
+        // 当点击播放冷静系列(Project 03)中的一个视频时，另一个自动暂停
+        const stoicVideos = document.querySelectorAll('.stoic-video');
+        stoicVideos.forEach(video => {
+            video.addEventListener('play', () => {
+                stoicVideos.forEach(otherVideo => {
+                    if (otherVideo !== video && !otherVideo.paused) {
+                        otherVideo.pause();
+                    }
+                });
+            });
+        });
+
+        // ================= 🌟 2026 前沿黑科技：超前视距预拉取缓存 (Eager-Lazy Pre-fetching) =================
+        // 解决原生 loading="lazy" 在弱网或非 CDN (如 GitHub Raw) 环境下加载滞后、闪空的痛点
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            const imagePreloadObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        
+                        // 核心策略：在后台悄悄创建一个真实的 Image 请求，去服务器拉取数据。
+                        // 这样当用户继续向下滑动，触发 img 本身的懒加载时，图片已经被缓存在了本地浏览器中，实现秒开。
+                        const tempImg = new Image();
+                        tempImg.src = img.src;
+                        
+                        observer.unobserve(img); // 每张图预先拉取一次后便解除监控，释放性能
+                    }
+                });
+            }, {
+                // 关键参数：设置根边距为底部扩展 1500 像素 (约等于 1.5 到 2 个手机屏幕的距离)
+                // 这意味着只要用户往下滚，提前两屏的图片就会开始疯狂静默下载
+                rootMargin: '0px 0px 1500px 0px' 
+            });
+            
+            lazyImages.forEach(img => imagePreloadObserver.observe(img));
         }
     </script>
 </body>
