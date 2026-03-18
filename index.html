@@ -158,8 +158,13 @@
                 </div>
                 
                 <div class="md:col-span-8 lg:col-span-6">
-                    <div class="relative w-full h-[400px] md:h-[450px] lg:h-full min-h-[400px] lg:min-h-[800px] rounded-md border border-white/10 overflow-hidden group select-none">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/building.jpg?raw=true" fetchpriority="high" alt="修改后的主视觉" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                    <!-- 🌟 核心优化：移除手机端写死的高度限制，保留中大屏的固定高度规则 -->
+                    <div class="relative w-full md:h-[450px] lg:h-full md:min-h-[400px] lg:min-h-[800px] rounded-md border border-white/10 overflow-hidden group select-none">
+                        
+                        <!-- 1. 底图 (After / 最终效果) - 手机端设为 relative 撑开高度，PC端恢复 absolute -->
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/building.jpg?raw=true" fetchpriority="high" alt="修改后的主视觉" class="relative md:absolute md:inset-0 w-full h-auto md:h-full object-cover pointer-events-none">
+
+                        <!-- 2. 顶图 (Before / 白模初稿) -->
                         <img id="project01CompareImage" src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project01/buildingbase.jpg?raw=true" fetchpriority="high" alt="修改前的主视觉" class="absolute inset-0 w-full h-full object-cover pointer-events-none bg-[#111]" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
                         
                         <div id="project01CompareHandle" class="absolute top-0 bottom-0 w-[2px] bg-purple-500 left-[50%] pointer-events-none z-10 flex items-center justify-center -translate-x-1/2 shadow-[0_0_15px_rgba(103,51,234,0.6)] transition-opacity duration-300">
@@ -300,43 +305,61 @@
                 <div class="mb-10">
                     <h4 class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-widest border-b border-white/10 pb-4">Part 2: Visual Concept & Face Swap Breakdown</h4>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                        <div class="flex flex-col">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui05.jpg?raw=true" loading="lazy" decoding="async" alt="comfyui换脸" class="w-full h-[400px] md:h-[300px] lg:h-[500px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
-                            <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">MIDJOURNEY原图</p>
-                        </div>
-
-                        <div class="flex flex-col justify-between gap-6 lg:gap-8">
-                            <div class="flex flex-col">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui02.jpg?raw=true" loading="lazy" decoding="async" alt="IDOL单人MV预告截图" class="w-full h-[200px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
-                                <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">IDOL单人MV预告截图</p>
+                    <!-- 🌟 核心优化：利用 fixed text container + flex-1 relative 使底部像素级完美对齐 -->
+                    <div class="grid grid-cols-3 gap-2 md:gap-6 lg:gap-8 items-stretch">
+                        
+                        <!-- Left: MIDJOURNEY -->
+                        <div class="flex flex-col h-full">
+                            <div class="flex-1 relative w-full">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui05.jpg?raw=true" loading="lazy" decoding="async" alt="comfyui换脸" class="absolute inset-0 w-full h-full object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
                             </div>
-                            <div class="flex flex-col">
-                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui06.jpg?raw=true" loading="lazy" decoding="async" alt="LORA换脸" class="w-full h-[200px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
-                                <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">COMFYUI</p>
+                            <div class="h-8 md:h-10 mt-2 md:mt-3 flex items-start justify-center">
+                                <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest leading-tight">MIDJOURNEY<br class="md:hidden">原图</p>
                             </div>
                         </div>
 
-                        <div class="flex flex-col">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui.jpg?raw=true" loading="lazy" decoding="async" alt="AI换脸后" class="w-full h-[400px] md:h-[300px] lg:h-[500px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
-                            <p class="text-center text-[10px] md:text-xs text-gray-400 mt-3 font-bold tracking-widest">AI换脸后</p>
+                        <!-- Middle: IDOL & COMFYUI -->
+                        <div class="flex flex-col h-full justify-between">
+                            <div class="flex flex-col">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui02.jpg?raw=true" loading="lazy" decoding="async" alt="IDOL单人MV预告截图" class="w-full h-[56px] sm:h-[76px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
+                                <div class="mt-2 md:mt-3 flex items-start justify-center">
+                                    <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest leading-tight">IDOL单人MV<br class="md:hidden">预告截图</p>
+                                </div>
+                            </div>
+                            <!-- 底端推至底部对齐 -->
+                            <div class="flex flex-col mt-auto pt-2 md:pt-4">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui06.jpg?raw=true" loading="lazy" decoding="async" alt="LORA换脸" class="w-full h-[56px] sm:h-[76px] md:h-[135px] lg:h-[220px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
+                                <div class="h-8 md:h-10 mt-2 md:mt-3 flex items-start justify-center">
+                                    <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest">COMFYUI</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: AI换脸后 -->
+                        <div class="flex flex-col h-full">
+                            <div class="flex-1 relative w-full">
+                                <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aicomfyui.jpg?raw=true" loading="lazy" decoding="async" alt="AI换脸后" class="absolute inset-0 w-full h-full object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-zoom-in" onclick="openLightbox(this.src)">
+                            </div>
+                            <div class="h-8 md:h-10 mt-2 md:mt-3 flex items-start justify-center">
+                                <p class="text-center text-[8px] sm:text-[10px] md:text-xs text-gray-400 font-bold tracking-widest leading-tight">AI换脸后</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-10 mt-20">
-                    <h4 class="text-sm font-bold text-gray-500 mb-8 uppercase tracking-widest border-b border-white/10 pb-4">Part 3: Face Swap Workflow</h4>
+                <div class="mb-10 mt-12 md:mt-20">
+                    <h4 class="text-sm font-bold text-gray-500 mb-6 md:mb-8 uppercase tracking-widest border-b border-white/10 pb-4">Part 3: Face Swap Workflow</h4>
                     
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6 mb-12 w-full">
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow01.png?raw=true" loading="lazy" decoding="async" alt="Midjourney初稿" class="w-full md:w-[36%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                    <div class="flex flex-row items-center justify-center gap-1 sm:gap-2 md:gap-4 lg:gap-6 mb-8 md:mb-12 w-full">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow01.png?raw=true" loading="lazy" decoding="async" alt="Midjourney初稿" class="w-[36%] h-[80px] sm:h-[120px] md:h-[250px] lg:h-[350px] object-cover rounded-md md:rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                         
-                        <span class="text-3xl md:text-4xl font-black text-purple-600 select-none">+</span>
+                        <span class="text-xl sm:text-2xl md:text-4xl font-black text-purple-600 select-none">+</span>
                         
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow02.jpg?raw=true" loading="lazy" decoding="async" alt="真人参考" class="w-1/2 md:w-[18%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow02.jpg?raw=true" loading="lazy" decoding="async" alt="真人参考" class="w-[18%] h-[80px] sm:h-[120px] md:h-[250px] lg:h-[350px] object-cover rounded-md md:rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                         
-                        <span class="text-3xl md:text-4xl font-black text-purple-600 select-none">=</span>
+                        <span class="text-xl sm:text-2xl md:text-4xl font-black text-purple-600 select-none">=</span>
                         
-                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow03.png?raw=true" loading="lazy" decoding="async" alt="最终合成" class="w-full md:w-[36%] h-[250px] md:h-[250px] lg:h-[350px] object-cover rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
+                        <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/project05/aiwokflow03.png?raw=true" loading="lazy" decoding="async" alt="最终合成" class="w-[36%] h-[80px] sm:h-[120px] md:h-[250px] lg:h-[350px] object-cover rounded-md md:rounded-lg border border-white/10 hover:border-purple-500/50 transition-all shadow-lg cursor-zoom-in" onclick="openLightbox(this.src)">
                     </div>
 
                     <div class="space-y-6 mt-8">
@@ -629,7 +652,7 @@
                         <div class="border-l-2 border-purple-500 pl-6 py-2">
                             <h4 class="text-lg font-bold text-white mb-2">Concept Definition</h4>
                             <p class="text-sm text-gray-400 leading-relaxed">
-                                探索未来数字生命体的形态。将“人形”与“无机质感”结合，破碎的金属外壳下透出内部的能量光辉。
+                                探索未来数字生命体的形态。将“人形”与“无机质感”结合，破碎的金属外壳下透出内部能量光辉。
                             </p>
                         </div>
                         <div class="text-xs text-gray-500">
