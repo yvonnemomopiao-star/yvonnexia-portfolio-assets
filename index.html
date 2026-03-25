@@ -374,7 +374,7 @@
                         <div class="relative flex flex-col border-l-[3px] border-purple-500 pl-4 w-full">
                             <span class="text-[10px] text-gray-400 tracking-[0.2em] uppercase mb-2 font-bold pr-12">WeChat / 微信</span>
                             <span class="text-gray-800 font-bold text-lg font-mono break-all pr-12">Yueyexiandewxhao</span>
-                            <button onclick="openLightbox('https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/wechat.jpg?raw=true')" 
+                            <button onclick="openLightbox('https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/wechat.png?raw=true')" 
                                     class="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-gray-100 hover:bg-purple-100 text-gray-500 hover:text-purple-600 rounded-lg transition-all duration-300 cursor-pointer group shrink-0"
                                     title="点击查看微信二维码">
                                 <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -543,48 +543,48 @@
                 </div>
             </section>
 
-            <!-- 🌟 极致美学重构：职业经历 (图片书架排版 + 噪点底色) -->
-            <section id="experience" class="w-full bg-noise text-gray-900 relative z-40 py-32 px-6 md:px-12 overflow-hidden shadow-inner">
+            <!-- 🌟 极致美学重构：职业经历 (图片书架排版 + 纯色底板) -->
+            <section id="experience" class="w-full bg-[#d8dcfe] text-gray-900 relative z-40 py-32 px-6 md:px-12 overflow-hidden shadow-inner">
                 <div class="max-w-[1024px] mx-auto relative z-10">
                     
                     <div class="mb-24 text-center">
-                        <h2 class="text-3xl md:text-5xl font-black tracking-widest mb-3 text-white mix-blend-overlay opacity-90 drop-shadow-md">WORK EXPERIENCE</h2>
-                        <div class="w-16 h-1.5 bg-white/50 mx-auto rounded-full"></div>
-                        <p class="text-purple-900/80 mt-6 tracking-widest text-sm uppercase font-bold">The Books of My Career / 点击书脊查阅履历</p>
+                        <h2 class="text-3xl md:text-5xl font-black tracking-widest mb-3 text-[#fafafd] opacity-90 drop-shadow-sm">WORK EXPERIENCE</h2>
+                        <p class="text-gray-500/50 mt-4 tracking-widest text-sm uppercase font-bold">The Books of My Career / 点击书脊查阅履历</p>
                     </div>
 
-                    <div class="flex items-end justify-center h-[400px] md:h-[480px] border-b-[3px] border-white/40 pb-1 w-full max-w-4xl mx-auto overflow-visible px-2 md:px-4 gap-2 md:gap-3">
+                    <!-- 🌟 书脊间距在这里修改：gap-2(手机端) md:gap-4(平板端) lg:gap-6(桌面端) -->
+                    <div class="flex items-end justify-center min-h-[350px] md:min-h-[500px] pb-1 w-full max-w-5xl mx-auto overflow-visible px-2 md:px-4 gap-1 md:gap-2 lg:gap-3">
                         
-                        <!-- 🌟 核心修改：hover:drop-shadow 全部替换为 rgba(216,220,254,0.8) 即 #d8dcfe 的高亮版本 -->
+                        <!-- 🌟 核心修改：利用 Flexbox 的 shrink 特性，完全基于图片原始宽高比进行等比缩放 -->
                         
                         <!-- 书本 01: 乂特欧 -->
-                        <div onclick="openExpModal(0)" class="mr-2 md:mr-8 h-[280px] md:h-[340px] w-auto origin-bottom-right rotate-[10deg] md:rotate-[8deg] cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:rotate-0 hover:drop-shadow-[0_20px_30px_rgba(216,220,254,0.8)] shrink-0 z-10 drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/kpop.png?raw=true" class="h-full w-auto max-w-none block object-contain pointer-events-none" alt="Spine 01">
+                        <div onclick="openExpModal(0)" class="mr-2 md:mr-9 shrink min-w-0 origin-bottom-right rotate-[10deg] md:rotate-[8deg] cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:rotate-0 hover:drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/kpop.png?raw=true" class="max-w-full h-auto block object-contain pointer-events-none" alt="Spine 01">
                         </div>
 
                         <!-- 书本 02: 独立视觉顾问 -->
-                        <div onclick="openExpModal(1)" class="h-[340px] md:h-[400px] w-auto origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[0_20px_30px_rgba(216,220,254,0.8)] shrink-0 z-20 drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/freelancer.png?raw=true" class="h-full w-auto max-w-none block object-contain pointer-events-none" alt="Spine 02">
+                        <div onclick="openExpModal(1)" class="shrink min-w-0 origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/freelancer.png?raw=true" class="max-w-full h-auto block object-contain pointer-events-none" alt="Spine 02">
                         </div>
 
                         <!-- 书本 03: 假面科技 -->
-                        <div onclick="openExpModal(2)" class="h-[380px] md:h-[450px] w-auto origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[0_20px_30px_rgba(216,220,254,0.8)] shrink-0 z-30 drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/sina.png?raw=true" class="h-full w-auto max-w-none block object-contain pointer-events-none" alt="Spine 03">
+                        <div onclick="openExpModal(2)" class="shrink min-w-0 origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/sina.png?raw=true" class="max-w-full h-auto block object-contain pointer-events-none" alt="Spine 03">
                         </div>
 
                         <!-- 书本 04: 宣合网络 -->
-                        <div onclick="openExpModal(3)" class="h-[360px] md:h-[430px] w-auto origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[0_20px_30px_rgba(216,220,254,0.8)] shrink-0 z-40 drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/04.png?raw=true" class="h-full w-auto max-w-none block object-contain pointer-events-none" alt="Spine 04">
+                        <div onclick="openExpModal(3)" class="shrink min-w-0 origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/04.png?raw=true" class="max-w-full h-auto block object-contain pointer-events-none" alt="Spine 04">
                         </div>
 
                         <!-- 书本 05: 烨游信息 -->
-                        <div onclick="openExpModal(4)" class="h-[250px] md:h-[300px] w-auto origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[0_20px_30px_rgba(216,220,254,0.8)] shrink-0 z-30 drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/05.png?raw=true" class="h-full w-auto max-w-none block object-contain pointer-events-none" alt="Spine 05">
+                        <div onclick="openExpModal(4)" class="shrink min-w-0 origin-bottom rotate-0 cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/05.png?raw=true" class="max-w-full h-auto block object-contain pointer-events-none" alt="Spine 05">
                         </div>
 
                         <!-- 书本 06: 亿皮艾 -->
-                        <div onclick="openExpModal(5)" class="ml-2 md:ml-16 h-[290px] md:h-[350px] w-auto origin-bottom-left -rotate-[12deg] md:-rotate-[14deg] cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:rotate-0 hover:drop-shadow-[0_20px_30px_rgba(216,220,254,0.8)] shrink-0 z-20 drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
-                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/06.png?raw=true" class="h-full w-auto max-w-none block object-contain pointer-events-none" alt="Spine 06">
+                        <div onclick="openExpModal(5)" class="ml-2 md:ml-16 shrink min-w-0 origin-bottom-left -rotate-[12deg] md:-rotate-[14deg] cursor-pointer relative transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-8 hover:z-50 hover:rotate-0 hover:drop-shadow-[2px_4px_10px_rgba(0,0,0,0.12)]">
+                            <img src="https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/book/06.png?raw=true" class="max-w-full h-auto block object-contain pointer-events-none" alt="Spine 06">
                         </div>
 
                     </div>
@@ -1216,7 +1216,7 @@
                     </div>
                 </div>
 
-                <!-- ================= 🌟 核心新增：AI 模型探索 (LORA) ================= -->
+                <!-- ================= 🌟 新增：AI 模型探索 (LORA) ================= -->
                 <!-- 章节引入语 -->
                 <div class="max-w-[1024px] mx-auto px-6 md:px-12 mt-48 mb-32 text-center relative z-10">
                     <h2 class="text-3xl md:text-5xl font-black tracking-[0.1em] mb-4 text-white">AI MODEL EXPLORATION</h2>
@@ -1416,7 +1416,7 @@
         
         <div class="flex flex-wrap items-center justify-center gap-6 mt-8">
             <a href="mailto:1246599899@qq.com" class="inline-block border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all">Send Email / 发邮件</a>
-            <button onclick="openLightbox('https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/wechat.jpg?raw=true')" 
+            <button onclick="openLightbox('https://github.com/yvonnemomopiao-star/yvonnexia-portfolio-assets/blob/main/wechat.png?raw=true')" 
                     class="inline-block border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all cursor-pointer">
                 WECHAT / 微信
             </button>
@@ -1445,7 +1445,7 @@
     </div>
 
     <!-- 🌟 新增：高级淡紫色遮罩履历画册层 (Modal) -->
-    <div id="expModal" class="fixed inset-0 z-[120] hidden items-center justify-center bg-purple-900/30 backdrop-blur-md opacity-0 transition-opacity duration-300" onclick="closeExpModal()">
+    <div id="expModal" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/30 backdrop-blur-md opacity-0 transition-opacity duration-300" onclick="closeExpModal()">
         <div id="expModalBox" class="relative w-[90%] max-w-2xl bg-[#FAFAFD] rounded-2xl shadow-2xl p-8 md:p-12 transform scale-95 transition-transform duration-300 max-h-[85vh] overflow-y-auto" onclick="event.stopPropagation()">
             <!-- 关闭按钮 -->
             <button onclick="closeExpModal()" class="absolute top-6 right-6 text-gray-400 hover:text-purple-600 transition-colors p-2 rounded-full hover:bg-purple-50">
@@ -1498,7 +1498,7 @@
                 desc: "主导欧美卡通与暗黑风格游戏视觉研发",
                 list: [
                     "<strong class='text-gray-800'>《才不是童话》(暗黑卡牌)：</strong> 负责核心场景概念设计，定义项目的色彩规格与构图调性。",
-                    "<strong class='text-gray-800'>《魔王》(欧美塔防)：</strong> 主导场景物件的标准化拆解 (<span class='text-purple-600 font-bold'>Modular Design</span>)，提升了 3D 制作的还原效率。"
+                    "<strong class='text-gray-800'>《魔王》(欧美塔防)：</strong> 主导场景关卡设计，场景物件的标准化拆解 (<span class='text-purple-600 font-bold'>Modular Design</span>)，提升了 3D 制作的还原效率。"
                 ]
             },
             {
@@ -1507,7 +1507,8 @@
                 time: "2018/05 - 2019/12",
                 desc: "二次元项目与界面视觉构建",
                 list: [
-                    "<strong class='text-gray-800'>二次元项目经验：</strong> 主导《依依恋物语》、《七日恋人》等多款游戏场景设计与 UI 视觉研发。"
+                    "<strong class='text-gray-800'>场景原画设计：</strong> 主导《七日恋人》等多款游戏场景设计与物件拆分落地。",
+                    "<strong class='text-gray-800'>UI与交互视觉：</strong> 参与游戏界面的 UI 视觉优化与核心 Icon 绘制。"
                 ]
             },
             {
@@ -1516,7 +1517,8 @@
                 time: "2016/08 - 2018/04",
                 desc: "游戏原画与交互视觉",
                 list: [
-                    "<strong class='text-gray-200'>核心职责：</strong> 负责游戏项目的场景原画绘制及界面 UI 设计落地。"
+                    "<strong class='text-gray-800'>场景原画设计：</strong> 负责游戏项目《依依恋物语》的场景原画绘制及氛围构建。",
+                    "<strong class='text-gray-800'>UI与交互视觉：</strong> 负责游戏界面 UI 视觉优化与 Icon 设计落地。"
                 ]
             },
             {
@@ -1525,9 +1527,9 @@
                 time: "2014/06 - 2016/08",
                 desc: "早期日企动漫项目沉淀",
                 list: [
-                    "<strong class='text-gray-200'>GSC 衍生品研发：</strong> 负责 Good Smile Company（简称 GSC，国内常称良笑社 / 奸笑社）的 Q版角色三视图绘制，并用 MAYA 进行 3D 手办建模，并应用于日本柏青哥（パチンコ）游戏机中。",
-                    "<strong class='text-gray-200'>一线动漫场景绘制：</strong> 深度参与《物语系列》、《魔法少女》等日本一线动漫场景绘制。",
-                    "<strong class='text-gray-200'>团队建设与内训：</strong> 负责新进 3D 员工的专业培训。"
+                    "<strong class='text-gray-800'>GSC 衍生品研发：</strong> 负责 Good Smile Company（简称 GSC，国内常称良笑社 / 奸笑社）的 Q版角色三视图绘制，并用 MAYA 进行 3D 手办建模，并应用于日本柏青哥（パチンコ）游戏机中。",
+                    "<strong class='text-gray-800'>一线动漫场景绘制：</strong> 深度参与《物语系列》、《魔法少女》等日本一线动漫场景绘制。",
+                    "<strong class='text-gray-800'>团队建设与内训：</strong> 负责新进 3D 员工的专业培训。"
                 ]
             }
         ];
@@ -1783,10 +1785,22 @@
             });
         });
 
-        // CDN 替换机制
+        // CDN 替换机制与缓存控制 (⚠️ 避坑：频繁更新图片时，CDN 和浏览器缓存会导致图片比例不更新)
         document.querySelectorAll('img').forEach(img => {
             const src = img.getAttribute('src') || img.getAttribute('data-src');
-            if (src && src.includes('github.com') && src.includes('/blob/main/') && src.includes('?raw=true')) {
+            if (src && src.includes('github.com')) {
+                // 开发调试期：为了让你立刻看到新图片的比例，这里使用动态时间戳强制打破缓存
+                // (等你所有图片定稿后，可以恢复使用下方的 jsDelivr CDN 替换逻辑以提升线上加载速度)
+                const cacheBuster = new Date().getTime();
+                const freshSrc = src + (src.includes('?') ? '&' : '?') + 't=' + cacheBuster;
+                
+                if (img.hasAttribute('data-src')) {
+                    img.setAttribute('data-src', freshSrc);
+                } else {
+                    img.src = freshSrc;
+                }
+
+                /* 线上正式版 CDN 替换代码 (暂时注释，定稿后可解开)
                 const optimizedSrc = src.replace('https://github.com/', 'https://cdn.jsdelivr.net/gh/')
                                         .replace('/blob/main/', '@main/')
                                         .replace('?raw=true', '');
@@ -1795,6 +1809,7 @@
                 } else {
                     img.src = optimizedSrc;
                 }
+                */
             }
         });
 
