@@ -99,14 +99,6 @@
             writing-mode: vertical-rl;
             text-orientation: mixed;
         }
-
-        /* 🌟 SVG Curved Loop CSS 动画支持 (处理鼠标悬停停滞) */
-        #curve-animate {
-            animation-play-state: running;
-        }
-        .svg-marquee-container:hover #curve-animate {
-            animation-play-state: paused;
-        }
     </style>
 </head>
 <body class="w-full relative bg-[#FAFAFD] text-gray-900 overflow-x-hidden">
@@ -414,21 +406,6 @@
                     <img src="https://res.cloudinary.com/duzkdvaki/image/upload/q_auto/f_auto/v1775996070/shadow_hfjl7k.png" fetchpriority="high" class="mt-[150px] md:mt-[250px] w-64 md:w-[320px] opacity-80 blur-md mix-blend-multiply">
                 </div>
             </section>
-
-            <!-- 🌟 页面动效分割线 (SVG Curved Loop - 弧度为 0 的直线模式) -->
-            <div class="w-full bg-[#FAFAFD] relative overflow-hidden h-[60px] md:h-[180px] z-40 flex items-center justify-center mt-[-2px] mb-[-2px] cursor-pointer svg-marquee-container border-y border-gray-100/50 shadow-sm">
-                <svg class="absolute w-[200%] md:w-[150%] h-full top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                    <!-- 将曲线指令 (Q) 改为完全平直的直线指令 (L)，对应 curveAmount=0 -->
-                    <path id="curved-path" d="M 0 50 L 1000 50" fill="transparent" stroke="transparent" />
-                    <text fill="#d9dcfc" class="text-sm md:text-lg font-black tracking-[0.1em] uppercase select-none" style="font-family: 'Inter', sans-serif;" dominant-baseline="middle">
-                        <textPath href="#curved-path" startOffset="0%">
-                            <!-- 利用 SVG 原生 animate 标签实现平滑循环动效 -->
-                            <animate id="curve-animate" attributeName="startOffset" from="0%" to="-50%" dur="20s" repeatCount="indefinite" />
-                            XIA YIJING ✦ CREATIVE ✦ 2026 ✦ AIGC VISUAL DESIGN ✦ ALL RIGHTS ARE RESERVED ✦ XIA YIJING ✦ CREATIVE ✦ 2026 ✦ AIGC VISUAL DESIGN ✦ ALL RIGHTS ARE RESERVED ✦ XIA YIJING ✦ CREATIVE ✦ 2026 ✦ AIGC VISUAL DESIGN ✦ ALL RIGHTS ARE RESERVED ✦ XIA YIJING ✦ CREATIVE ✦ 2026 ✦ AIGC VISUAL DESIGN ✦ ALL RIGHTS ARE RESERVED ✦
-                        </textPath>
-                    </text>
-                </svg>
-            </div>
 
             <!-- About Me 版块 -->
             <section id="about" class="w-full bg-[#FAFAFD] text-gray-900 relative z-40 py-32 px-6 md:px-12 flex items-center justify-center min-h-[50vh]">
